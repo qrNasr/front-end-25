@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        #main-heading {
+            color: green;
+            text-decoration: underline;
+        }
+
+        .intro-paragraph {
+            font-weight: bold;
+        }
+
+        .another-paragraph {
+            color: red;
+        }
+
+        .another-paragraph span {
+            font-weight: bolder;
+            color: purple;
+        }
+
+        /* Select all elements that have the 'lang' attribute */
+        [lang] {
+            border: 1px solid black;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Select all elements where the 'lang' attribute is exactly 'fr' */
+        [lang="fr"] {
+            background-color: lightcoral;
+            color: white;
+        }
+
+        /* Select all <a> elements whose 'href' attribute starts with 'https' */
+        a[href^="https"] {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading" data-type="main">Hello, World!</h1>
+    <p class="intro-paragraph" lang="en">This is the first paragraph of text.</p>
+    <p class="another-paragraph" lang="fr">This is another paragraph with <span>some emphasized text</span> inside.</p>
+    <a href="https://www.example.com" target="_blank">Example Link</a>
+    <a href="/about">About Us</a>
+</body>
+
+<!-- Explanation of the Attribute Selectors:
+
+    [lang]: This selector targets any element that has the lang attribute, regardless of its value.
+    [lang="fr"]: This selector specifically targets elements where the lang attribute has the exact value "fr".
+    a[href^="https"]: This selector targets all <a> elements whose href attribute begins with the string "https".
+
+Attribute selectors are very useful for applying styles based on specific information embedded in your HTML elements. -->
+</html>
