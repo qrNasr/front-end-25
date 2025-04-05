@@ -1,0 +1,43 @@
+/* style.css (Add these rules or modify existing ones) */
+
+/* Style the button */
+#reveal-button {
+    display: inline-block; /* Or block if you want it on its own line */
+    background-color: #007bff; /* Example blue */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 15px; /* Space above the button */
+    transition: background-color 0.3s ease;
+}
+
+#reveal-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#reveal-button:disabled {
+    background-color: #cccccc; /* Grey out when disabled */
+    cursor: not-allowed;
+}
+
+/* Style the fun fact paragraph initially and when revealed */
+.fun-fact-style {
+    margin-top: 15px; /* Space above the paragraph */
+    min-height: 1.2em; /* Reserve some space even when empty */
+    font-style: italic;
+    color: #555;
+    padding: 10px;
+    border-left: 3px solid transparent; /* Initially transparent border */
+    transition: all 0.5s ease; /* Smooth transition for style changes */
+}
+
+/* Style added by JS when fact is revealed */
+.fun-fact-style.revealed {
+    color: #28a745; /* Green color */
+    font-weight: bold;
+    background-color: #e9f5e9; /* Light green background */
+    border-left-color: #28a745; /* Green border */
+}

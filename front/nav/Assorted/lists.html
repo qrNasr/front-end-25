@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Lists</title>
+    <style>
+        ul {
+            list-style-type: disc; /* Default bullet style */
+            margin-left: 20px; /* Add some left margin for indentation */
+        }
+        ol {
+            list-style-type: decimal; /* Default number style */
+            margin-left: 20px;
+        }
+        ul li {
+            margin-bottom: 5px; /* Add space between list items */
+        }
+         ol li{
+             margin-bottom: 5px;
+        }
+
+        ul ul,
+        ul ol,
+        ol ul,
+        ol ol {
+            margin-left: 30px; /* Indent nested lists further */
+            margin-top: 5px;  /* Add space above nested list */
+        }
+
+        ul ul {
+            list-style-type: circle; /* Style for nested unordered lists */
+        }
+        ul ol{
+           list-style-type: lower-alpha;
+        }
+
+        ol ul {
+            list-style-type: square; /* Style for nested ordered lists */
+        }
+         ol ol {
+            list-style-type: upper-roman;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML Lists</h1>
+
+    <h2>Unordered List (ul)</h2>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <h2>Ordered List (ol)</h2>
+    <ol>
+        <li>Step 1</li>
+        <li>Step 2</li>
+        <li>Step 3</li>
+    </ol>
+
+    <h2>Nested Lists</h2>
+    <ul>
+        <li>Item 1
+            <ul>
+                <li>Sub-item 1.1</li>
+                <li>Sub-item 1.2
+                    <ol>
+                        <li>Sub-sub-item 1.2.1</li>
+                        <li>Sub-sub-item 1.2.2</li>
+                    </ol>
+                </li>
+            </ul>
+        </li>
+        <li>Item 2
+            <ol>
+                <li>Sub-item 2.1</li>
+                <li>Sub-item 2.2</li>
+            </ol>
+        </li>
+        <li>Item 3</li>
+    </ul>
+
+     <h2>Nested List Example 2</h2>
+        <ol>
+            <li>First</li>
+            <li>Second
+                <ul>
+                    <li>Second A</li>
+                    <li>Second B
+                         <ol>
+                            <li>Second B i</li>
+                            <li>Second B ii</li>
+                         </ol>
+                    </li>
+                    <li>Second C</li>
+                </ul>
+            </li>
+            <li>Third</li>
+        </ol>
+</body>
+</html>

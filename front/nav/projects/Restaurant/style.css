@@ -1,0 +1,325 @@
+/* Basic Reset & Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling for nav links */
+    scroll-padding-top: 80px; /* Offset for fixed header */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Default font */
+    line-height: 1.7;
+    color: #444;
+    background-color: #f9f9f9;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography & Links */
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif; /* Heading font */
+    margin-bottom: 0.8em;
+    color: #333;
+    line-height: 1.3;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; text-align: center; margin-bottom: 1.5em; }
+h3 { font-size: 1.5rem; color: #555; border-bottom: 1px solid #eee; padding-bottom: 0.3em;}
+h4 { font-size: 1.1rem; color: #333; margin-bottom: 0.2em;}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: #e67e22; /* Primary accent color (orange) */
+}
+
+a:hover {
+    color: #d35400; /* Darker orange */
+}
+
+img {
+    max-width: 100%; /* Make images responsive */
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+.site-header {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fixed header */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header stays on top */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: 700;
+}
+.logo a:hover { color: #333; } /* Prevent color change on logo hover */
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    color: #555;
+    font-weight: 600;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent; /* For hover effect */
+}
+
+.main-nav a:hover,
+.main-nav a.active { /* Add 'active' class with JS later if needed */
+    color: #e67e22;
+    border-bottom-color: #e67e22;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    background-image: url('https://via.placeholder.com/1920x800.png?text=Restaurant+Ambiance'); /* Replace with your image */
+    background-size: cover;
+    background-position: center center;
+    height: 85vh; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* For overlay */
+    color: #fff;
+    padding-top: 80px; /* Account for fixed header height */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative; /* Place content above overlay */
+    z-index: 2;
+    max-width: 700px;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #e67e22;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #d35400;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Section Padding */
+#about, #menu, #contact {
+    padding: 80px 0;
+}
+
+/* About Section Styles */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Space between text and image */
+}
+
+.about-text {
+    flex: 1; /* Takes up half the space */
+}
+
+.about-image {
+    flex: 1; /* Takes up half the space */
+}
+
+.about-image img {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu Section Styles */
+#menu {
+    background-color: #fff; /* Alternate background color */
+}
+
+.menu-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: -1.5em auto 2.5em auto; /* Adjust spacing */
+    color: #666;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 40px;
+}
+
+.menu-category {
+    /* Optional: Add border or background to categories */
+    /* border: 1px solid #eee; padding: 20px; border-radius: 5px; */
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between; /* Pushes price to the right */
+    align-items: flex-start; /* Align items top */
+    margin-bottom: 1.5em;
+    padding-bottom: 1em;
+    border-bottom: 1px dashed #eee;
+}
+.menu-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+
+.item-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0; /* Remove default p margin */
+    padding-right: 10px; /* Space between description and price */
+}
+
+.price {
+    font-weight: 600;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap; /* Prevent price from wrapping */
+}
+
+/* Contact Section Styles */
+.contact-container {
+    display: flex;
+    align-items: flex-start; /* Align tops */
+    gap: 40px;
+}
+
+.contact-info {
+    flex: 1;
+}
+.contact-info h3 {
+    margin-top: 1.5em;
+    border-bottom: none; /* Remove border from H3 here */
+}
+.contact-info ul {
+    margin-top: 0.5em;
+}
+.contact-info li {
+     margin-bottom: 0.3em;
+     color: #555;
+}
+
+.contact-map {
+    flex: 1;
+}
+.contact-map img {
+     border-radius: 5px;
+     border: 1px solid #ddd;
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: #333;
+    color: #bbb;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px; /* Space above footer */
+}
+
+.site-footer p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+/* --- Simple Media Query for Responsiveness (Example) --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    .hero-content h2 { font-size: 2.5rem; }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo { margin-bottom: 10px; }
+    .main-nav ul { padding-left: 0; } /* Remove padding if needed */
+    .main-nav li { margin: 0 10px; } /* Adjust spacing */
+
+    .about-container, .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-image, .contact-map {
+         margin-top: 30px;
+    }
+     .menu-grid {
+        grid-template-columns: 1fr; /* Stack menu categories */
+    }
+    .menu-item {
+        flex-direction: column; /* Stack item info and price */
+        align-items: center;
+        text-align: center;
+    }
+    .item-info p { padding-right: 0; }
+    .price { margin-top: 5px; }
+}

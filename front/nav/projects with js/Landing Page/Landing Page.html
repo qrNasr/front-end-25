@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Feature</title>
+
+    <!-- CSS Styles Embedded Here -->
+    <style>
+        /* Basic Reset & Body */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            padding: 40px; /* Add some space around the section */
+            background-color: #f4f4f4;
+        }
+
+        /* Container for the feature section */
+        .feature-section {
+            display: flex; /* Use Flexbox for layout */
+            align-items: center; /* Vertically align items */
+            gap: 40px; /* Space between image and text columns */
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 1000px; /* Limit width */
+            margin: 0 auto; /* Center the section */
+        }
+
+        /* Image Column */
+        .feature-image {
+            flex: 1; /* Allow column to take up space */
+        }
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+
+        /* Text Column */
+        .feature-text {
+            flex: 1; /* Allow column to take up space */
+        }
+
+        .feature-text h2 {
+            font-size: 2rem;
+            margin-bottom: 0.75em;
+            color: #333;
+        }
+
+        .feature-text p {
+            margin-bottom: 1.5em;
+            color: #555;
+        }
+
+        /* Button Styling */
+        .button {
+            display: inline-block;
+            background-color: #e67e22; /* Orange */
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none; /* Remove underline from link */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #d35400; /* Darker orange */
+            transform: translateY(-2px);
+        }
+
+        /* Styling for the hidden details paragraph */
+        #more-details {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #e67e22; /* Orange border */
+            border-radius: 0 4px 4px 0;
+            color: #444;
+            /* --- Initially Hidden --- */
+            display: none;
+            /* --- Transition for smooth appearance (optional, works best with opacity/height changes) --- */
+            /* For a simple fade, you'd use opacity:0 and visibility:hidden initially */
+            /* transition: opacity 0.5s ease, max-height 0.5s ease;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden; */
+        }
+
+        /* --- Class added by JS to show the details --- */
+        #more-details.visible {
+            display: block;
+            /* For smooth transition (match with above): */
+            /* opacity: 1;
+            max-height: 500px; */ /* Set to a value larger than content height */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .feature-section {
+                flex-direction: column; /* Stack columns */
+                text-align: center;
+            }
+            .feature-text h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="feature-section">
+        <div class="feature-image">
+            <img src="https://via.placeholder.com/500x350.png/1abc9c/ffffff?text=Awesome+Product" alt="Image of the awesome product">
+        </div>
+        <div class="feature-text">
+            <h2>Our Awesome Product</h2>
+            <p>Discover how our innovative product can revolutionize your workflow and boost your productivity like never before. It's simple, elegant, and powerful.</p>
+
+            <!-- *** Button with ID for JS *** -->
+            <button id="learn-more-button" class="button">Learn More</button>
+
+            <!-- *** Hidden Paragraph with ID for JS *** -->
+            <p id="more-details">
+                <strong>Key Features Include:</strong> Intuitive drag-and-drop interface, seamless cloud integration, robust security protocols, and 24/7 customer support. Built with cutting-edge technology for maximum performance and reliability. Get started today and see the difference!
+            </p>
+        </div>
+    </section>
+
+
+    <!-- ************************************** -->
+    <!-- *** JAVASCRIPT CODE STARTS HERE *** -->
+    <!-- ************************************** -->
+    <script>
+        // This code runs after the HTML above has been loaded.
+
+        // 1. Get references to the button and the details paragraph
+        const learnMoreButton = document.getElementById('learn-more-button');
+        const moreDetailsParagraph = document.getElementById('more-details');
+
+        // Safety check
+        if (learnMoreButton && moreDetailsParagraph) {
+
+            // 2. Add a click event listener to the button
+            learnMoreButton.addEventListener('click', function() {
+                // This function runs when the button is clicked
+
+                // 3. Toggle the 'visible' class on the paragraph
+                // classList.toggle checks if the class exists:
+                // - If it exists, it removes it.
+                // - If it doesn't exist, it adds it.
+                moreDetailsParagraph.classList.toggle('visible');
+
+                // 4. Optional: Change the button text based on visibility
+                // Check if the paragraph NOW has the 'visible' class
+                if (moreDetailsParagraph.classList.contains('visible')) {
+                    // If it's now visible, change button text to "Show Less"
+                    learnMoreButton.textContent = "Show Less";
+                    console.log("More details shown.");
+                } else {
+                    // If it's now hidden, change button text back to "Learn More"
+                    learnMoreButton.textContent = "Learn More";
+                     console.log("More details hidden.");
+                }
+            });
+
+        } else {
+            console.error("Could not find the button or details paragraph element!");
+        }
+
+    </script>
+    <!-- *** JAVASCRIPT CODE ENDS HERE *** -->
+
+</body>
+</html>

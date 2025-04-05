@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding HTML Tags</title>
+
+    <!-- Basic CSS for Readability -->
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f8f9fa; /* Lighter grey background */
+            color: #212529; /* Darker text color */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff; /* White content background */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #007bff;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: #17a2b8; /* Teal color for sub-sections */
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* Style code blocks */
+        pre {
+            background-color: #e9ecef; /* Light background for code */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace; /* Monospace font */
+            font-size: 0.95em;
+            border: 1px solid #ced4da;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        /* Style the rendered examples */
+        .rendered-example {
+            border: 1px dashed #6c757d; /* Dashed grey border */
+            padding: 15px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            background-color: #f8f9fa; /* Slightly different background */
+        }
+
+        /* Style links */
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Basic list styling */
+        ul, ol {
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+        li { margin-bottom: 5px; }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #dee2e6; /* Light grey rule */
+            margin: 40px 0;
+        }
+
+        .tag-explanation {
+            margin-bottom: 30px; /* Space between tag explanations */
+        }
+
+    </style>
+    <!-- No JavaScript needed for this specific lesson -->
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Dissecting HTML: Understanding Tags</h1>
+        </header>
+
+        <section id="intro">
+            <h2>What are HTML Tags?</h2>
+            <p>HTML (HyperText Markup Language) uses special keywords called <strong>tags</strong> to structure content on a web page. Think of them as instructions for the web browser, telling it how to display different elements like headings, paragraphs, lists, images, and links.</p>
+            <p>Most tags come in pairs:</p>
+            <ul>
+                <li>An <strong>opening tag</strong>: <code><tagname></code></li>
+                <li>A <strong>closing tag</strong>: <code></tagname></code> (notice the forward slash <code>/</code>)</li>
+            </ul>
+            <p>The content you want to format goes <em>between</em> the opening and closing tags.</p>
+
+            <h3>Nesting Tags</h3>
+            <p>Tags can be placed inside other tags. This is called <strong>nesting</strong>. It's important to close nested tags in the reverse order they were opened (like closing parentheses).</p>
+            <pre><code><div>
+  <p>This paragraph is <strong>nested</strong> inside a div.</p>
+</div></code></pre>
+
+            <h3>Attributes</h3>
+            <p>Tags can also have <strong>attributes</strong>, which provide additional information about the element. Attributes are placed inside the opening tag and usually come in name/value pairs like <code>name="value"</code>.</p>
+            <pre><code><a href="https://www.example.com">This is a link</a>
+<img src="image.jpg" alt="Description of image"></code></pre>
+            <p>Here, <code>href</code>, <code>src</code>, and <code>alt</code> are attribute names, and <code>"https://www.example.com"</code>, <code>"image.jpg"</code>, and <code>"Description of image"</code> are their corresponding values.</p>
+
+            <h3>Self-Closing Tags</h3>
+            <p>Some tags don't have content between them and don't need a separate closing tag. These are called <strong>self-closing</strong> or empty tags. They often end with <code>/></code> in XHTML or just <code>></code> in HTML5 (though <code>/></code> is often used for clarity).</p>
+             <pre><code><br>  <!-- Line break -->
+<hr>  <!-- Horizontal rule -->
+<img src="logo.png" alt="Logo"> <!-- Image -->
+<input type="text"> <!-- Input field --></code></pre>
+        </section>
+
+        <hr>
+
+        <section id="common-tags">
+            <h2>Common HTML Tags Explained</h2>
+            <p>Let's look at some of the most frequently used HTML tags:</p>
+
+            <!-- === Headings === -->
+            <div class="tag-explanation">
+                <h3>Headings: <code><h1></code> to <code><h6></code></h3>
+                <p>Used to define headings and subheadings. <code><h1></code> is the most important (usually the main title), and <code><h6></code> is the least important.</p>
+                <pre><code><h1>Main Title</h1>
+<h2>Subheading</h2>
+<h3>Smaller Subheading</h3></code></pre>
+                <div class="rendered-example">
+                    <h1>Main Title</h1>
+                    <h2>Subheading</h2>
+                    <h3>Smaller Subheading</h3>
+                </div>
+            </div>
+
+            <!-- === Paragraph === -->
+            <div class="tag-explanation">
+                <h3>Paragraph: <code><p></code></h3>
+                <p>Used to define a paragraph of text.</p>
+                <pre><code><p>This is the first paragraph of text.</p>
+<p>This is the second paragraph. Browsers automatically add some space between paragraphs.</p></code></pre>
+                <div class="rendered-example">
+                    <p>This is the first paragraph of text.</p>
+                    <p>This is the second paragraph. Browsers automatically add some space between paragraphs.</p>
+                </div>
+            </div>
+
+            <!-- === Link === -->
+            <div class="tag-explanation">
+                <h3>Link (Anchor): <code><a></code></h3>
+                <p>Used to create hyperlinks. The <code>href</code> attribute specifies the destination URL.</p>
+                <pre><code><a href="https://www.google.com">Visit Google</a></code></pre>
+                <div class="rendered-example">
+                    <a href="https://www.google.com" target="_blank">Visit Google</a> (Opens in new tab for safety)
+                </div>
+            </div>
+
+            <!-- === Image === -->
+            <div class="tag-explanation">
+                <h3>Image: <code><img></code></h3>
+                <p>Used to embed an image. It's a self-closing tag. Requires the <code>src</code> (source) attribute for the image path and the <code>alt</code> (alternative text) attribute for accessibility and if the image fails to load.</p>
+                <pre><code><img src="https://via.placeholder.com/150x50?text=Sample+Image" alt="A sample placeholder image"></code></pre>
+                <div class="rendered-example">
+                    <img src="https://via.placeholder.com/150x50?text=Sample+Image" alt="A sample placeholder image">
+                </div>
+            </div>
+
+            <!-- === Lists === -->
+            <div class="tag-explanation">
+                <h3>Lists: <code><ul></code>, <code><ol></code>, <code><li></code></h3>
+                <p><code><ul></code> creates an unordered list (bullets). <code><ol></code> creates an ordered list (numbers). <code><li></code> defines each list item within either list type.</p>
+                <pre><code><h4>Unordered List:</h4>
+<ul>
+  <li>Apples</li>
+  <li>Oranges</li>
+</ul>
+
+<h4>Ordered List:</h4>
+<ol>
+  <li>First step</li>
+  <li>Second step</li>
+</ol></code></pre>
+                <div class="rendered-example">
+                    <h4>Unordered List:</h4>
+                    <ul>
+                      <li>Apples</li>
+                      <li>Oranges</li>
+                    </ul>
+
+                    <h4>Ordered List:</h4>
+                    <ol>
+                      <li>First step</li>
+                      <li>Second step</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- === Division & Span === -->
+            <div class="tag-explanation">
+                 <h3>Containers: <code><div></code> and <code><span></code></h3>
+                 <p><code><div></code> (division) is a block-level container used to group larger sections of content, often for layout or styling with CSS. It starts on a new line.</p>
+                 <p><code><span></code> is an inline container used to group smaller pieces of content within a line, often for applying specific styles or targeting with JavaScript.</p>
+                 <pre><code><div style="border: 1px solid blue; padding: 10px;">
+  This is a div container.
+  <p>It can contain other elements, like this paragraph with a <span style="color: red; font-weight: bold;">span element</span> inside.</p>
+</div>
+Another line of text outside the div.</code></pre>
+                 <div class="rendered-example">
+                     <div style="border: 1px solid blue; padding: 10px;">
+                         This is a div container.
+                         <p>It can contain other elements, like this paragraph with a <span style="color: red; font-weight: bold;">span element</span> inside.</p>
+                     </div>
+                     Another line of text outside the div.
+                 </div>
+            </div>
+
+             <!-- === Formatting === -->
+            <div class="tag-explanation">
+                <h3>Basic Formatting: <code><strong></code>, <code><em></code>, <code><code></code></h3>
+                <p><code><strong></code> indicates strong importance (usually renders as bold).</p>
+                <p><code><em></code> indicates emphasis (usually renders as italic).</p>
+                <p><code><code></code> indicates computer code (usually renders in a monospace font).</p>
+                <pre><code><p>This text is normal, but <strong>this is important</strong>.</p>
+<p>You should <em>really</em> pay attention to this.</p>
+<p>Use the <code>console.log()</code> function in JavaScript.</p></code></pre>
+                <div class="rendered-example">
+                    <p>This text is normal, but <strong>this is important</strong>.</p>
+                    <p>You should <em>really</em> pay attention to this.</p>
+                    <p>Use the <code>console.log()</code> function in JavaScript.</p>
+                </div>
+            </div>
+
+            <!-- === Line Break & Horizontal Rule === -->
+            <div class="tag-explanation">
+                 <h3>Line Break: <code><br></code> & Horizontal Rule: <code><hr></code></h3>
+                 <p><code><br></code> inserts a single line break (self-closing). Useful within paragraphs or addresses where you don't want a full paragraph space.</p>
+                 <p><code><hr></code> creates a thematic break between paragraph-level elements, often rendered as a horizontal line (self-closing).</p>
+                 <pre><code><p>Roses are red,<br>Violets are blue.</p>
+<hr>
+<p>This is content after the horizontal rule.</p></code></pre>
+                 <div class="rendered-example">
+                     <p>Roses are red,<br>Violets are blue.</p>
+                     <hr style="margin: 10px 0; background-color: #6c757d;"> <!-- Added style for visibility in example -->
+                     <p>This is content after the horizontal rule.</p>
+                 </div>
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section id="semantic-tags">
+            <h2>A Note on Semantic Tags</h2>
+            <p>HTML5 introduced tags that describe the *meaning* or *purpose* of the content they contain. These are called <strong>semantic tags</strong>. Examples include:</p>
+            <ul>
+                <li><code><header></code>: Introductory content for a section or page.</li>
+                <li><code><footer></code>: Footer content for a section or page.</li>
+                <li><code><nav></code>: Navigation links.</li>
+                <li><code><article></code>: Self-contained content (like a blog post or news story).</li>
+                <li><code><section></code>: A thematic grouping of content.</li>
+                <li><code><aside></code>: Content aside from the main content (like a sidebar).</li>
+            </ul>
+            <p>Using semantic tags helps search engines, accessibility tools, and other developers understand the structure of your page better than just using generic <code><div></code> tags everywhere.</p>
+             <pre><code><body>
+  <header>
+    <h1>My Website</h1>
+    <nav>... navigation links ...</nav>
+  </header>
+
+  <article>
+    <h2>Article Title</h2>
+    <p>Article content...</p>
+  </article>
+
+  <footer>
+    <p>Copyright info...</p>
+  </footer>
+</body></code></pre>
+        </section>
+
+         <hr>
+
+         <section id="conclusion">
+             <h2>Conclusion</h2>
+             <p>HTML tags are the essential foundation for creating web pages. Understanding what the common tags do and how to use them correctly (including nesting and attributes) is the first crucial step in web development.</p>
+             <p>Experiment with these tags! Try changing the content inside them, adding more list items, or nesting them differently (while keeping the structure valid). The best way to learn is by doing!</p>
+         </section>
+
+    </div> <!-- End of .container -->
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Navigation Bars</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-bar-1 {
+      background-color: #1a73e8;
+    }
+
+    .nav-bar-2 {
+      background-color: #34a853;
+    }
+
+    .nav-bar-3 {
+      background-color: #fbbc05;
+    }
+
+    .nav-bar a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-bar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- First Navigation Bar -->
+  <div class="nav-bar nav-bar-1">
+    <div class="logo">Brand 1</div>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- Second Navigation Bar -->
+  <div class="nav-bar nav-bar-2">
+    <div class="logo">Brand 2</div>
+    <div>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#team">Team</a>
+      <a href="#blog">Blog</a>
+      <a href="#careers">Careers</a>
+    </div>
+  </div>
+
+  <!-- Third Navigation Bar -->
+  <div class="nav-bar nav-bar-3">
+    <div class="logo">Brand 3</div>
+    <div>
+      <a href="#faq">FAQ</a>
+      <a href="#support">Support</a>
+      <a href="#terms">Terms</a>
+      <a href="#privacy">Privacy</a>
+    </div>
+  </div>
+</body>
+</html>

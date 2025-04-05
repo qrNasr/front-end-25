@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tags Deep Dive</title>
+
+    <!-- Basic CSS for clarity and layout -->
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; /* Light blue-grey background */
+            color: #333;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 25px auto;
+            background-color: #ffffff; /* White content area */
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50; /* Dark blue-grey headings */
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 3px solid #3498db; /* Blue underline */
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #1abc9c; /* Teal color for sections */
+        }
+
+        h3 {
+            color: #3498db; /* Blue color for tag names */
+            margin-top: 25px;
+            font-weight: 600;
+        }
+
+        /* Style for code examples */
+        pre {
+            background-color: #ecf0f1; /* Very light grey */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto; /* Handle long code lines */
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            border: 1px solid #bdc3c7; /* Light grey border */
+            margin-top: 10px;
+            white-space: pre-wrap; /* Wrap long lines in display */
+            word-wrap: break-word;
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background-color: #ecf0f1;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 0.95em;
+        }
+
+        pre code { /* Reset specific styles for code inside pre */
+             padding: 0;
+             background-color: transparent;
+             border-radius: 0;
+             font-size: inherit; /* Inherit font size from pre */
+        }
+
+
+        /* Style for rendered examples */
+        .rendered-example {
+            border: 2px dashed #1abc9c; /* Dashed teal border */
+            padding: 15px;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .rendered-example h4 { /* Specific style for headings inside examples */
+            margin-top: 0;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        /* Style individual tag explanation blocks */
+        .tag-block {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee; /* Separator line */
+        }
+        .tag-block:last-child {
+            border-bottom: none; /* No line after the last block */
+        }
+
+        /* Other specific element styles */
+        a { color: #3498db; text-decoration: none; }
+        a:hover { text-decoration: underline; color: #2980b9; }
+        ul, ol { margin-left: 20px; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        hr { border: 0; height: 1px; background-color: #bdc3c7; margin: 30px 0; }
+        img { max-width: 100%; height: auto; display: block; margin-top: 5px;} /* Responsive images */
+        blockquote {
+            border-left: 4px solid #bdc3c7;
+            margin-left: 0;
+            padding-left: 15px;
+            font-style: italic;
+            color: #555;
+        }
+        table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left;}
+        th { background-color: #ecf0f1; color: #333; font-weight: bold;}
+
+    </style>
+    <!-- No JavaScript needed for this HTML-focused lesson -->
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>HTML Tags: The Building Blocks</h1>
+        </header>
+
+        <section id="what-are-tags">
+            <h2>What Are HTML Tags Again?</h2>
+            <p>HTML uses tags (like <code><p></code>, <code><img></code>, <code><div></code>) to tell the browser how to structure and display content. Most tags wrap around content with an opening <code><tagname></code> and a closing <code></tagname></code>. Some are self-closing (like <code><br></code> or <code><img src="..."></code>).</p>
+            <p>Let's explore some of the most common and useful tags!</p>
+        </section>
+
+        <hr>
+
+        <section id="essential-tags">
+            <h2>Essential Content Tags</h2>
+
+            <!-- Tag Block: Headings -->
+            <div class="tag-block">
+                <h3>Headings: <code><h1></code> to <code><h6></code></h3>
+                <p>Define hierarchical headings. <code><h1></code> is the most important, <code><h6></code> the least. Use them to structure your document logically.</p>
+                <strong>Code Example:</strong>
+                <pre><code><h1>Main Page Title (Most Important)</h1>
+<h2>Major Section Heading</h2>
+<h3>Sub-Section Heading</h3>
+<h4>Minor Heading</h4>
+<h5>Even Smaller Heading</h5>
+<h6>Smallest Heading</h6></code></pre>
+                <strong>How it Looks (Rendered):</strong>
+                <div class="rendered-example">
+                    <h1>Main Page Title (Most Important)</h1>
+                    <h2>Major Section Heading</h2>
+                    <h3>Sub-Section Heading</h3>
+                    <h4>Minor Heading</h4>
+                    <h5>Even Smaller Heading</h5>
+                    <h6>Smallest Heading</h6>
+                </div>
+            </div>
+
+            <!-- Tag Block: Paragraph -->
+            <div class="tag-block">
+                <h3>Paragraph: <code><p></code></h3>
+                <p>Defines a block of text as a paragraph. Browsers typically add space before and after paragraphs.</p>
+                <strong>Code Example:</strong>
+                <pre><code><p>This is the first paragraph. It contains sentences that form a complete thought.</p>
+<p>This is the second paragraph. Notice the space between this and the one above.</p></code></pre>
+                <strong>How it Looks (Rendered):</strong>
+                <div class="rendered-example">
+                    <p>This is the first paragraph. It contains sentences that form a complete thought.</p>
+                    <p>This is the second paragraph. Notice the space between this and the one above.</p>
+                </div>
+            </div>
+
+            <!-- Tag Block: Link -->
+            <div class="tag-block">
+                <h3>Link (Anchor): <code><a></code></h3>
+                <p>Creates a hyperlink to other web pages, files, locations within the same page, email addresses, or other URLs. The <code>href</code> attribute is essential and specifies the destination.</p>
+                <strong>Code Example:</strong>
+                <pre><code><p>Visit <a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a> for great web resources.</p>
+<p>Go to the <a href="#semantic-tags">Semantic Tags section</a> on this page.</p></code></pre>
+                <strong>How it Looks (Rendered):</strong>
+                <div class="rendered-example">
+                    <p>Visit <a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a> for great web resources.</p>
+                    <p>Go to the <a href="#semantic-tags">Semantic Tags section</a> on this page. (Clicking this should scroll down)</p>
+                </div>
+            </div>
+
+             <!-- Tag Block: Image -->
+             <div class="tag-block">
+                <h3>Image: <code><img></code></h3>
+                <p>Embeds an image into the page. This is a self-closing tag. Key attributes: <code>src</code> (image source URL) and <code>alt</code> (alternative text for accessibility/broken images).</p>
+                <strong>Code Example:</strong>
+                <pre><code><h4>A Placeholder Image:</h4>
+<img src="https://via.placeholder.com/300x100.png?text=Example+Image" alt="Placeholder image showing dimensions 300x100"></code></pre>
+                <strong>How it Looks (Rendered):</strong>
+                <div class="rendered-example">
+                    <h4>A Placeholder Image:</h4>
+                    <img src="https://via.placeholder.com/300x100.png?text=Example+Image" alt="Placeholder image showing dimensions 300x100">
+                </div>
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section id="list-tags">
+            <h2>List Tags</h2>
+
+            <!-- Tag Block: Unordered List -->
+            <div class="tag-block">
+                <h3>Unordered List: <code><ul></code> and <code><li></code></h3>
+                <p>Creates a list of items where the order doesn't matter (typically displayed with bullets). Each item is defined using the <code><li></code> (list item) tag.</p>
+                <strong>Code Example:</strong>
+                <pre><code><h4>Shopping List:</h4>
+<ul>
+  <li>Milk</li>
+  <li>Bread</li>
+  <li>Eggs</li>
+</ul></code></pre>
+                <strong>How it Looks (Rendered):</strong>
+                <div class="rendered-example">
+                    <h4>Shopping List:</h4>
+                    <ul>
+                      <li>Milk</li>
+                      <li>Bread</li>
+                      <li>Eggs</li>
+                    </ul>
+                </div>
+            </div>
+
+             <!-- Tag Block: Ordered List -->
+             <div class="tag-block">
+                <h3>Ordered List: <code><ol></code> and <code><li></code></h3>
+                <p>Creates a list of items where the order *does* matter (typically displayed with numbers). Each item is also defined using the <code><li></code> tag.</p>
+                <strong>Code Example:</strong>
+                <pre><code><h4>Instructions:</h4>
+<ol>
+  <li>Preheat oven.</li>
+  <li>Mix ingredients.</li>
+  <li>Bake for 30 minutes.</li>
+</ol></code></pre>
+                <strong>How it Looks (Rendered):</strong>
+                <div class="rendered-example">
+                    <h4>Instructions:</h4>
+                    <ol>
+                      <li>Preheat oven.</li>
+                      <li>Mix ingredients.</li>
+                      <li>Bake for 30 minutes.</li>
+                    </ol>
+                </div>
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section id="formatting-tags">
+            <h2>Text Formatting & Inline Tags</h2>
+
+             <!-- Tag Block: Strong / Em -->
+             <div class="tag-block">
+                <h3>Emphasis: <code><strong></code> and <code><em></code></h3>
+                <p><code><strong></code> indicates strong importance (usually bold). <code><em></code> indicates stress emphasis (usually italic). Use them for semantic meaning, not just visual styling.</p>
+                <strong>Code Example:</strong>
+                <pre><code><p>This is <strong>very important</strong> information!</p>
+<p>You should <em>really</em> remember this.</p></code></pre>
+                <strong>How it Looks (Rendered):</strong>
+                <div class="rendered-example">
+                     <p>This is <strong>very important</strong> information!</p>
+                     <p>You should <em>really</em> remember this.</p>
+                </div>
+            </div>
+
+            <!-- Tag Block: Code / Pre -->
+            <div class="tag-block">
+                <h3>Code Snippets: <code><code></code> and <code><pre></code></h3>
+                <p><code><code></code> is used for inline code snippets (usually monospace font). <code><pre></code> (preformatted text) preserves whitespace and line breaks, often used to wrap blocks of code (and frequently contains a <code><code></code> tag inside).</p>
+                <strong>Code Example:</strong>
+                <pre><code><p>Use the CSS property <code>background-color: blue;</code> to set the background.</p>
+
+<pre>
+function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+</pre></code></pre>
+                <strong>How it Looks (Rendered):</strong>
+                <div class="rendered-example">
+                     <p>Use the CSS property <code>background-color: blue;</code> to set the background.</p>
+                     <pre>
+function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+</pre>
+                </div>
+            </div>
+
+             <!-- Tag Block: Br / Hr -->
+             <div class="tag-block">
+                <h3>Line Break: <code><br></code> & Horizontal Rule: <code><hr></code></h3>
+                <p><code><br></code> forces a line break within text (self-closing). <code><hr></code> represents a thematic break between paragraphs (e.g., change of topic), visually rendered as a horizontal line (self-closing).</p>
+                <strong>Code Example:</strong>
+                <pre><code><p>Line one.<br>Line two (after br).</p>
+<p>End of first topic.</p>
+<hr>
+<p>Start of second topic.</p></code></pre>
+                <strong>How it Looks (Rendered):</strong>
+                <div class="rendered-example">
+                     <p>Line one.<br>Line two (after br).</p>
+                     <p>End of first topic.</p>
+                     <hr>
+                     <p>Start of second topic.</p>
+                </div>
+            </div>
+
+             <!-- Tag Block: Blockquote -->
+             <div class="tag-block">
+                <h3>Blockquote: <code><blockquote></code></h3>
+                <p>Indicates that the enclosed text is an extended quotation, usually indented by browsers.</p>
+                <strong>Code Example:</strong>
+                <pre><code><blockquote>
+  <p>"The important thing is not to stop questioning. Curiosity has its own reason for existing."</p>
+  <footer>— Albert Einstein</footer> <!-- Footer can be used for citation -->
+</blockquote></code></pre>
+                <strong>How it Looks (Rendered):</strong>
+                <div class="rendered-example">
+                     <blockquote>
+                       <p>"The important thing is not to stop questioning. Curiosity has its own reason for existing."</p>
+                       <footer>— Albert Einstein</footer>
+                     </blockquote>
+                </div>
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section id="structure-tags">
+             <h2>Structural & Table Tags</h2>
+
+             <!-- Tag Block: Div / Span -->
+             <div class="tag-block">
+                <h3>Containers: <code><div></code> and <code><span></code></h3>
+                <p><code><div></code> is a generic block-level container for grouping larger sections. It starts on a new line. <code><span></code> is a generic inline container for grouping smaller parts of text or content within a line. They are often used with CSS classes or IDs for styling and JavaScript manipulation.</p>
+                <strong>Code Example:</strong>
+                <pre><code><div style="border: 1px solid red; padding: 10px;">
+  This is a div. It takes up the full width available.
+  <p>It contains this paragraph. You can style <span style="color: blue; font-weight: bold;">just this part</span> using a span.</p>
+</div></code></pre>
+                <strong>How it Looks (Rendered):</strong>
+                <div class="rendered-example">
+                    <div style="border: 1px solid red; padding: 10px;">
+                      This is a div. It takes up the full width available.
+                      <p>It contains this paragraph. You can style <span style="color: blue; font-weight: bold;">just this part</span> using a span.</p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Tag Block: Table -->
+             <div class="tag-block">
+                <h3>Table Tags: <code><table></code>, <code><tr></code>, <code><th></code>, <code><td></code></h3>
+                <p>Used to display data in rows and columns.
+                    <code><table></code> defines the table.
+                    <code><tr></code> defines a table row.
+                    <code><th></code> defines a table header cell (usually bold and centered).
+                    <code><td></code> defines a standard table data cell.
+                    (Optional: <code><thead></code>, <code><tbody></code>, <code><tfoot></code> group rows).
+                </p>
+                <strong>Code Example:</strong>
+                <pre><code><table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alice</td>
+      <td>Developer</td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td>Designer</td>
+    </tr>
+  </tbody>
+</table></code></pre>
+                <strong>How it Looks (Rendered):</strong>
+                <div class="rendered-example">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Role</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Alice</td>
+                          <td>Developer</td>
+                        </tr>
+                        <tr>
+                          <td>Bob</td>
+                          <td>Designer</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+        <hr>
+
+        <section id="semantic-tags">
+            <h2>Semantic HTML5 Tags</h2>
+            <p>These tags provide meaning about the structure of the content, helping browsers, search engines, and assistive technologies understand your page better.</p>
+            <ul>
+                <li><code><header></code>: Represents introductory content or navigational aids (often contains H1, logo, nav).</li>
+                <li><code><nav></code>: Contains major navigation links.</li>
+                <li><code><main></code>: Specifies the main, dominant content of the document.</li>
+                <li><code><article></code>: Represents a self-contained composition (e.g., blog post, forum post, news story).</li>
+                <li><code><section></code>: Represents a standalone thematic section within a document.</li>
+                <li><code><aside></code>: Represents content tangentially related to the main content (e.g., sidebar, pull quotes).</li>
+                <li><code><footer></code>: Represents the footer for its nearest sectioning content or the whole page (often contains copyright, related links).</li>
+                <li><code><figure></code> & <code><figcaption></code>: Used to group media content (like images) with a caption.</li>
+            </ul>
+            <p>While they often look similar to <code><div></code> initially, using them makes your HTML more meaningful and accessible!</p>
+             <strong>Conceptual Example (No specific rendering shown here):</strong>
+                <pre><code><body>
+  <header>
+    <h1>Website Title</h1>
+    <nav>... Main Menu ...</nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>Blog Post Title</h2>
+      <p>Content...</p>
+      <figure>
+        <img src="post-image.jpg" alt="...">
+        <figcaption>Image caption here.</figcaption>
+      </figure>
+    </article>
+
+    <aside>
+      <h3>Related Links</h3>
+      <ul>...</ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>© 2023 My Website</p>
+  </footer>
+</body></code></pre>
+        </section>
+
+        <hr>
+
+        <section id="conclusion">
+            <h2>Keep Exploring!</h2>
+            <p>This covers many fundamental HTML tags, but there are more! The best way to learn is to experiment. Try creating your own simple HTML files, use these tags, and see what happens in the browser.</p>
+            <p>Remember to check resources like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">MDN Web Docs</a> for a complete list and detailed explanations of all HTML tags.</p>
+        </section>
+
+    </div> <!-- End of .container -->
+
+</body>
+</html>

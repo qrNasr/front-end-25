@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Pancakes Recipe</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your existing CSS -->
+</head>
+    <!-- link css -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to your existing CSS -->
+<body>
+
+    <article class="recipe-card"> <!-- Assuming you used recipe-card class -->
+
+        <div class="card-image"> <!-- Optional image container -->
+            <img src="https://via.placeholder.com/600x300.png/f1c40f/333333?text=Fluffy+Pancakes" alt="Fluffy golden pancakes with syrup">
+        </div>
+
+        <div class="card-content"> <!-- Container for text content -->
+            <h2>Fluffy Pancakes</h2>
+            <p class="description">Simple, classic, and delicious fluffy pancakes perfect for breakfast or brunch.</p>
+
+            <div class="recipe-details">
+                <div class="ingredients-section">
+                    <h3>Ingredients</h3>
+                    <ul class="ingredients-list">
+                        <!-- *** MODIFIED: Added checkbox and span for each item *** -->
+                        <li>
+                            <input type="checkbox" id="ing1" class="ingredient-checkbox">
+                            <label for="ing1"><span class="ingredient-text">1 ½ cups all-purpose flour</span></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="ing2" class="ingredient-checkbox">
+                            <label for="ing2"><span class="ingredient-text">3 ½ teaspoons baking powder</span></label>
+                        </li>
+                         <li>
+                            <input type="checkbox" id="ing3" class="ingredient-checkbox">
+                            <label for="ing3"><span class="ingredient-text">1 teaspoon salt</span></label>
+                        </li>
+                         <li>
+                            <input type="checkbox" id="ing4" class="ingredient-checkbox">
+                            <label for="ing4"><span class="ingredient-text">1 tablespoon white sugar</span></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="ing5" class="ingredient-checkbox">
+                            <label for="ing5"><span class="ingredient-text">1 ¼ cups milk</span></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="ing6" class="ingredient-checkbox">
+                            <label for="ing6"><span class="ingredient-text">1 egg</span></label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="ing7" class="ingredient-checkbox">
+                            <label for="ing7"><span class="ingredient-text">3 tablespoons butter, melted</span></label>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="instructions-section">
+                    <h3>Instructions</h3>
+                    <ol class="instructions-list">
+                        <li>In a large bowl, sift together the flour, baking powder, salt and sugar.</li>
+                        <li>Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.</li>
+                        <li>Heat a lightly oiled griddle or frying pan over medium high heat.</li>
+                        <li>Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake.</li>
+                        <li>Brown on both sides and serve hot with your favorite toppings.</li>
+                    </ol>
+                </div>
+            </div> <!-- /.recipe-details -->
+        </div> <!-- /.card-content -->
+    </article> <!-- /.recipe-card -->
+
+
+    <!-- ************************************** -->
+    <!-- *** JAVASCRIPT CODE STARTS HERE *** -->
+    <!-- ************************************** -->
+    <script>
+        // This code runs after the HTML above has been loaded.
+
+        // 1. Select ALL the ingredient checkboxes
+        // querySelectorAll finds all elements matching the CSS selector '.ingredient-checkbox'
+        const checkboxes = document.querySelectorAll('.ingredient-checkbox');
+
+        // 2. Loop through each checkbox found
+        checkboxes.forEach(function(checkbox) {
+            // For each individual checkbox...
+
+            // 3. Add an event listener for the 'change' event
+            // 'change' fires when the checked state of a checkbox changes
+            checkbox.addEventListener('change', function() {
+                // This function runs when THIS specific checkbox is checked or unchecked
+
+                // 4. Find the corresponding ingredient text
+                // We need to find the <span class="ingredient-text"> next to the checkbox.
+                // 'this' refers to the checkbox that triggered the event.
+                // 'parentElement' goes up to the <label>
+                // 'querySelector' finds the span inside that label.
+                const ingredientTextSpan = this.parentElement.querySelector('.ingredient-text');
+
+                // Safety check - make sure we found the text span
+                if (ingredientTextSpan) {
+                    // 5. Check if the checkbox is currently checked
+                    if (this.checked) {
+                        // If it IS checked, add the 'collected' class to the text span
+                        ingredientTextSpan.classList.add('collected');
+                         console.log(`Ingredient "${ingredientTextSpan.textContent}" marked as collected.`);
+                    } else {
+                        // If it is NOT checked, remove the 'collected' class
+                        ingredientTextSpan.classList.remove('collected');
+                         console.log(`Ingredient "${ingredientTextSpan.textContent}" unmarked.`);
+                    }
+                } else {
+                    console.error("Could not find the ingredient text span for a checkbox.");
+                }
+            });
+        });
+
+        console.log(`Found ${checkboxes.length} ingredient checkboxes.`); // Log how many checkboxes were found
+
+    </script>
+    <!-- *** JAVASASCRIPT CODE ENDS HERE *** -->
+
+</body>
+</html>

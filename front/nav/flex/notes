@@ -1,0 +1,30 @@
+* **On the Flex Container (Parent):**
+    * `flex-direction`: Determines the direction of the flex items.
+        * `row` (default): Items are placed in a row.
+        * `column`: Items are placed in a column.
+        * `row-reverse`: Items are placed in a row, reversed.
+        * `column-reverse`: Items are placed in a column, reversed
+    * `justify-content`:  Aligns flex items along the main axis.  (Row, by default)
+        * `flex-start` (default): Items are aligned to the start of the container.
+        * `flex-end`: Items are aligned to the end of the container.
+        * `center`: Items are centered in the container.
+        * `space-between`: Items are evenly distributed with space between them.
+        * `space-around`: Items are evenly distributed with space around them.
+        * `space-evenly`: Items are distributed evenly with equal space around, between, and at the edges of the container.
+    * `align-items`: Aligns flex items along the cross axis (Column, by default)
+        * `flex-start`: Items are aligned to the start of the container.
+        * `flex-end`: Items are aligned to the end of the container.
+        * `center`: Items are centered in the container.
+        * `baseline`: Items are aligned to their baselines
+        * `stretch` (default): Items are stretched to fill the container.
+    * `flex-wrap`:  Specifies whether the flex items should wrap when they don't fit in the container.
+        * `nowrap` (default): Items will not wrap.
+        * `wrap`: Items will wrap onto the next line.
+        * `wrap-reverse`: Items will wrap onto the next line in reverse order.
+    * `align-content`:  Modifies the behavior of the  `flex-wrap` property. Similar to  `justify-content`, but for wrapped lines.
+* **On Flex Items (Children):**
+    * `flex-grow`:  Specifies how much the item will grow relative to the other flex items.
+    * `flex-shrink`:  Specifies how much the item will shrink relative to the other flex items.
+    * `flex-basis`:  Specifies the initial length of the item.
+    * `flex`:  A shorthand property for `flex-grow`, `flex-shrink`, and `flex-basis`.
+    * `order`: Specifies the order of a flex item in the flex container

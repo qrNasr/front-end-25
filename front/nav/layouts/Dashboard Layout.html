@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 200px 1fr 1fr;
+            /* Three columns */
+            grid-template-rows: 100px auto;
+            /* Two rows */
+            gap: 10px;
+            /* Gap between rows and columns */
+            height: 100vh;
+            /* Full viewport height */
+        }
+
+        header {
+            grid-column: 1 / 4;
+            /* Span all three columns */
+            background-color: #007BFF;
+            /* Header background color */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            grid-column: 1 / 2;
+            /* First column */
+            background-color: #f0f0f0;
+            /* Navigation background color */
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+            /* Vertical spacing for links */
+        }
+
+        main {
+            grid-column: 2 / 4;
+            /* Middle two columns */
+            background-color: #e0e0e0;
+            /* Main content background color */
+            padding: 20px;
+        }
+
+        .widget {
+            background-color: #fff;
+            /* Widget background color */
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            grid-column: 1 / 4;
+            /* Span all three columns */
+            background-color: #007BFF;
+            /* Footer background color */
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <header>
+            <h1>Dashboard</h1>
+        </header>
+
+        <nav>
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#reports">Reports</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>Main Content</h2>
+            <div class="widget">
+                <h3>Widget 1</h3>
+                <p>Details about widget 1.</p>
+            </div>
+            <div class="widget">
+                <h3>Widget 2</h3>
+                <p>Details about widget 2.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 My Dashboard</p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

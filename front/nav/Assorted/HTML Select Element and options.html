@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Select and Options</title>
+    <style>
+      select {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      option {
+        padding: 8px;
+        font-size: 14px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+    </style>
+</head>
+<body>
+
+    <h2>HTML Select Element</h2>
+
+    <form>
+        <label for="ice-cream-flavor">Choose your favorite ice cream flavor:</label>
+        <select id="ice-cream-flavor" name="ice-cream-flavor">
+            <option value="vanilla">Vanilla</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="strawberry">Strawberry</option>
+            <option value="mint-chocolate-chip">Mint Chocolate Chip</option>
+            <option value="other" disabled>Other (disabled)</option>
+        </select>
+
+        <label for="car-model">Choose your car model:</label>
+        <select id="car-model" name="car-model">
+            <optgroup label="Volvo Cars">
+                <option value="volvo-xc90">Volvo XC90</option>
+                <option value="volvo-s60">Volvo S60</option>
+            </optgroup>
+            <optgroup label="Saab Cars">
+                <option value="saab-95">Saab 95</option>
+                <option value="saab-93">Saab 93</option>
+            </optgroup>
+        </select>
+    </form>
+
+    <script>
+      const iceCreamSelect = document.getElementById('ice-cream-flavor');
+
+      iceCreamSelect.addEventListener('change', (event) => {
+        const selectedValue = event.target.value;
+        console.log(`Selected ice cream flavor: ${selectedValue}`);
+      });
+    </script>
+</body>
+</html>

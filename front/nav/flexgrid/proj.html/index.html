@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Placement & Spanning</title>
+    <link rel="stylesheet" href="style_grid_placement.css">
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <h1>Grid Placement & Spanning</h1>
+
+    <section>
+        <h2>Explicit Placement using Line Numbers</h2>
+        <p>Grid lines are numbered 1, 2, 3...</p>
+        <div class="grid-container placement-lines">
+            <!-- Items will be placed based on CSS rules -->
+            <div class="item place-1">Item A (1/1 to 2/2)</div>
+            <div class="item place-2">Item B (Col 3, Row 1)</div>
+            <div class="item place-3">Item C (Row 2, Col 1 to 3)</div>
+            <div class="item">Item D (Auto)</div>
+            <div class="item">Item E (Auto)</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Spanning and Implicit Grid</h2>
+        <p>Grid expands automatically if items span beyond defined tracks.</p>
+        <div class="grid-container spanning-implicit">
+             <div class="item span-3-cols">Item 1 (Spans 3 cols)</div>
+             <div class="item">Item 2</div>
+             <div class="item">Item 3</div>
+             <div class="item span-2-rows">Item 4 (Spans 2 rows)</div>
+             <div class="item">Item 5</div>
+             <div class="item">Item 6</div>
+             <div class="item">Item 7</div>
+        </div>
+    </section>
+
+</body>
+</html>

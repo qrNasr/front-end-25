@@ -1,0 +1,33 @@
+/* style.css (Add this rule) */
+
+/* Style for the list items for better layout */
+.ingredients-list li {
+    display: flex; /* Align checkbox and label horizontally */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 8px; /* Space between ingredients */
+}
+
+/* Add some space between checkbox and label */
+.ingredient-checkbox {
+    margin-right: 8px;
+    cursor: pointer; /* Indicate checkbox is clickable */
+    /* Optional: Make checkbox slightly larger */
+    transform: scale(1.1);
+}
+
+.ingredients-list label {
+    cursor: pointer; /* Indicate label is clickable */
+    flex-grow: 1; /* Allow label to take available space */
+}
+
+/* Style for the ingredient text itself */
+.ingredient-text {
+    transition: all 0.3s ease; /* Smooth transition for strikethrough/color */
+}
+
+/* This class will be added/removed by JavaScript */
+.ingredient-text.collected {
+    text-decoration: line-through; /* Strikethrough effect */
+    color: #888; /* Make text grey */
+    opacity: 0.7; /* Slightly fade out */
+}

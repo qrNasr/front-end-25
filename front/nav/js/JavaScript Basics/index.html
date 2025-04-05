@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+    <style>
+        /* Basic styles for visibility */
+        body { font-family: sans-serif; padding: 20px; }
+        .box { border: 1px solid blue; padding: 15px; margin: 15px; min-height: 50px; background-color: #eef; }
+        button { padding: 8px 15px; margin: 5px; cursor: pointer; }
+        .output-area { margin-top: 15px; font-weight: bold; color: green; }
+        .highlight { background-color: yellow; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Fundamentals Demo</h1>
+
+    <div id="myBox" class="box">
+        This is a box.
+    </div>
+
+    <button id="logButton">Log Message to Console</button>
+    <button id="alertButton">Show Alert</button>
+    <button id="changeTextButton">Change Box Text</button>
+    <button id="changeStyleButton">Change Box Style</button>
+
+    <div id="output" class="output-area">
+        <!-- Output will appear here -->
+    </div>
+
+    <!-- Option 1: Internal Script Tag (Good for small demos) -->
+    <!-- <script>
+        // JavaScript code goes here
+        console.log("Internal Script Loaded!");
+    </script> -->
+
+    <!-- Option 2: External Script File (Recommended for larger projects) -->
+    <script src="script_basics.js"></script>
+
+</body>
+</html>

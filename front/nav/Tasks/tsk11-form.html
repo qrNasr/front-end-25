@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Fourth Webpage</title>
+</head>
+
+<style>
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center the form on the page */
+    border: 2px solid #ccc;
+    /* Add a border around the form */
+    padding: 20px;
+    /* Add padding to the form */
+    background-color: #f9f9f9;
+    /* Add a background color to the form */
+    border-radius: 10px;
+    /* Add rounded corners to the form */
+    max-width: 400px;
+    /* Set a maximum width for the form */
+    margin: auto;
+    /* Center the form horizontally */
+  }
+
+  label {
+    font-size: 1.2em;
+    /* Increase the font size of the labels */
+    font-weight: bold;
+    /* Make labels bold */
+    margin-bottom: 10px;
+    /* Add spacing between labels and input fields */
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="date"] {
+    width: 100%;
+    /* Larger width for input fields */
+    padding: 10px;
+    /* Add padding to the input fields */
+    margin-bottom: 15px;
+    /* Add spacing between input fields */
+    border: 1px solid #ccc;
+    /* Add a border to input fields */
+    border-radius: 5px;
+    /* Add rounded corners to input fields */
+  }
+
+  input[type="submit"] {
+    background-color: #4CAF50;
+    /* Green background */
+    color: white;
+    /* White text */
+    padding: 10px 20px;
+    /* Add padding to the submit button */
+    border: none;
+    /* Remove border */
+    border-radius: 5px;
+    /* Add rounded corners to the submit button */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+    font-size: 1.2em;
+    /* Increase font size of the submit button */
+    margin-top: 10px;
+    /* Add spacing above the submit button */
+  }
+
+
+  .gender-options {
+    display: flex;
+    /* Display gender options horizontally */
+    justify-content: space-between;
+    /* Space between the options */
+    margin-bottom: 15px;
+    /* Add spacing below the gender options */
+  }
+
+  .gender-options label {
+    margin-right: 20px;
+    /* Add spacing between gender options */
+  }
+
+  button[type="submit"] {
+    background-color: #4CAF50;
+    /* Different background color for the button */
+    color: white;
+    /* Change the text color of the button */
+    padding: 10px 20px;
+    /* Add padding to the button */
+    border: none;
+    /* Remove default border */
+    border-radius: 5px;
+    /* Add rounded corners to the button */
+    cursor: pointer;
+    /* Change cursor to pointer on hover */
+    transition: background-color 0.3s;
+    /* Smooth transition for hover effect */
+  }
+
+  button[type="submit"]:hover {
+    background-color: #45a049;
+    /* Darker shade on hover */
+  }
+</style>
+
+<body>
+  <h1>Registration Form</h1>
+  <p>Please fill out the following form:</p>
+  <form>
+    <label for="first-name">First Name:</label>
+    <input type="text" id="first-name" name="first-name" required minlength="2" maxlength="20" aria-required="true">
+
+    <label for="last-name">Last Name:</label>
+    <input type="text" id="last-name" name="last-name" required minlength="2" maxlength="20" aria-required="true">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required aria-required="true">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required minlength="8" maxlength="20" aria-required="true">
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required pattern="\d{3}-\d{3}-\d{4}" placeholder="123-456-7890" aria-required="true">
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required aria-required="true">
+
+    <fieldset>
+        <legend>Gender:</legend>
+        <div class="gender-options">
+            <label>
+                <input type="radio" name="gender" value="male" required aria-required="true"> Male
+            </label>
+            <label>
+                <input type="radio" name="gender" value="female" required aria-required="true"> Female
+            </label>
+        </div>
+    </fieldset>
+
+    <label for="subscription">Subscription:</label>
+    <input type="checkbox" id="subscription" name="subscription">
+
+    <label for="bio">Bio:</label>
+    <textarea id="bio" name="bio" required minlength="10" maxlength="200" aria-required="true"></textarea>
+
+    <button type="submit">Submit</button>
+</form>
+  <script>
+    // JavaScript to handle form submission
+    document.querySelector('form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      alert('Form submitted successfully!');
+    });
+  </script>
+  <script>
+    // JavaScript to handle form submission
+    document.querySelector('form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+      alert('Form submitted successfully!'); // Show a success message
+    });
+    // JavaScript to handle form validation
+    document.querySelector('form').addEventListener('submit', function (event) {
+      // Check if the form is valid
+      if (!this.checkValidity()) {
+        event.preventDefault(); // Prevent submission if the form is invalid
+        alert('Please fill out all required fields correctly.');
+      }
+    });
+  </script>
+  <script>
+    // JavaScript to handle form validation
+    document.querySelector('form').addEventListener('submit', function (event) {
+      const firstName = document.getElementById('first-name').value;
+      const lastName = document.getElementById('last-name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const phone = document.getElementById('phone').value;
+      const dob = document.getElementById('dob').value;
+
+      // Add your validation logic here
+    });
+    // Example validation: Check if all fields are filled
+    if (!firstName || !lastName || !email || !password || !phone || !dob) {
+      event.preventDefault(); // Prevent form submission
+      alert('Please fill out all required fields.');
+    }
+    // Example validation: Check if password is at least 8 characters
+    if (password.length < 8) {
+      event.preventDefault(); // Prevent form submission
+      alert('Password must be at least 8 characters long.');
+    }
+    // Example validation: Check if phone number is in the correct format
+    if (!/^\d{3}-\d{3}-\d{4}$/.test(phone)) {
+      event.preventDefault(); // Prevent form submission
+      alert('Phone number must be in the format 123-456-7890.');
+    }
+  </script>
+  <script>
+    // JavaScript to handle checkbox state
+    const subscriptionCheckbox = document.getElementById('subscription');
+    subscriptionCheckbox.addEventListener('change', function () {
+      if (this.checked) {
+        alert('You have subscribed to our newsletter!');
+      } else {
+        alert('You have unsubscribed from our newsletter.');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

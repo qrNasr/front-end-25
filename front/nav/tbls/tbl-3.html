@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden; /* For rounded corners with shadow */
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+
+        /* Style for Action icons */
+        .action-icons {
+            display: flex;
+            gap: 10px;
+            justify-content: center; /* Center icons */
+        }
+
+        .action-icons button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+            font-size: 18px; /* Adjust size as needed */
+        }
+
+        .action-icons button:hover {
+            opacity: 0.7; /* Reduce opacity on hover for a subtle effect */
+        }
+
+        .edit-icon {
+            color: green; /* Style as needed */
+        }
+
+        .delete-icon {
+            color: red; /* Style as needed */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            table {
+                border: 0;
+            }
+
+            thead {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                display: block;
+                border-bottom: 2px solid #ddd;
+            }
+
+            td {
+                display: block;
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+                border: none;
+            }
+
+            td:before {
+                position: absolute;
+                left: 0;
+                top: 0;
+                content: attr(data-label);
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+             /* Style for Action icons in mobile view */
+            .action-icons {
+                justify-content: flex-end; /* Align icons to the right in mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2>Responsive Table Using HTML and CSS</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>User Email</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="User ID">0001</td>
+                <td data-label="User Name">John Doe</td>
+                <td data-label="User Email">john.doe@example.com</td>
+                <td data-label="Status">Active</td>
+                <td data-label="Action">
+                    <div class="action-icons">
+                        <button class="edit-icon">✎</button>  <button class="delete-icon">✖</button>  </div>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="User ID">0002</td>
+                <td data-label="User Name">Jane Smith</td>
+                <td data-label="User Email">jane.smith@example.com</td>
+                <td data-label="Status">Pending</td>
+                 <td data-label="Action">
+                    <div class="action-icons">
+                        <button class="edit-icon">✎</button>  <button class="delete-icon">✖</button>  </div>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="User ID">0003</td>
+                <td data-label="User Name">Bob Johnson</td>
+                <td data-label="User Email">bob.johnson@example.com</td>
+                <td data-label="Status">Pending</td>
+                 <td data-label="Action">
+                    <div class="action-icons">
+                        <button class="edit-icon">✎</button>  <button class="delete-icon">✖</button>  </div>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="User ID">0004</td>
+                <td data-label="User Name">Jason Roy</td>
+                <td data-label="User Email">jasonroy@example.com</td>
+                <td data-label="Status">Active</td>
+                 <td data-label="Action">
+                    <div class="action-icons">
+                        <button class="edit-icon">✎</button>  <button class="delete-icon">✖</button>  </div>
+                </td>
+            </tr>
+            <tr>
+                <td data-label="User ID">0005</td>
+                <td data-label="User Name">Willims</td>
+                <td data-label="User Email">willimspoe@example.com</td>
+                <td data-label="Status">Active</td>
+                 <td data-label="Action">
+                    <div class="action-icons">
+                        <button class="edit-icon">✎</button>  <button class="delete-icon">✖</button>  </div>
+                </td>
+            </tr>
+             <tr>
+                <td data-label="User ID">0006</td>
+                <td data-label="User Name">Kevin Thomas</td>
+                <td data-label="User Email">kevinthomas@example.com</td>
+                <td data-label="Status">Active</td>
+                 <td data-label="Action">
+                    <div class="action-icons">
+                        <button class="edit-icon">✎</button>  <button class="delete-icon">✖</button>  </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

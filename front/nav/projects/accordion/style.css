@@ -1,0 +1,117 @@
+/* Basic Reset & Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f8f9fa; /* Very light grey */
+    color: #343a40; /* Dark grey text */
+    line-height: 1.6;
+    padding: 20px; /* Add padding around the body */
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 40px auto; /* Center container with spacing */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* FAQ Section Styles */
+.faq-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.5em;
+    color: #212529; /* Slightly darker heading */
+}
+
+/* Styling for each FAQ Item (<details>) */
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #e9ecef; /* Light border */
+    border-radius: 5px;
+    margin-bottom: 15px; /* Space between items */
+    /* transition: background-color 0.2s ease; */ /* Optional subtle transition */
+}
+
+/* Styling for the Question (<summary>) */
+.faq-item summary {
+    display: block; /* Important for ::before positioning and full-width click */
+    padding: 15px 45px 15px 20px; /* Padding: top/bottom, right (for icon), left */
+    font-weight: 700; /* Bold question */
+    color: #495057; /* Slightly lighter than body text */
+    cursor: pointer;
+    position: relative; /* Needed for positioning the icon */
+    transition: background-color 0.2s ease;
+}
+
+/* Remove default arrow/marker from summary */
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+.faq-item summary::marker { /* Standard way */
+    display: none;
+}
+/* For Firefox if ::marker doesn't work */
+/* .faq-item summary { list-style: none; } */
+
+
+/* Add custom icon using ::before */
+.faq-item summary::before {
+    content: '+'; /* Default icon is plus */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg); /* Center vertically and set initial rotation */
+    font-size: 1.5em; /* Make icon slightly larger */
+    font-weight: normal; /* Use normal weight for icon */
+    color: #6c757d; /* Grey icon */
+    transition: transform 0.3s ease, color 0.2s ease; /* Smooth rotation and color change */
+}
+
+/* Styling for the Answer Content */
+.faq-content {
+    padding: 0px 20px 20px 20px; /* Padding only when open (left/right/bottom) */
+    color: #495057;
+    border-top: 1px solid #e9ecef; /* Separator line */
+    /* Smooth fade-in (optional, doesn't handle height smoothly) */
+    /* opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; */
+}
+
+
+/* --- Styles When <details> is OPEN --- */
+
+/* Change background of summary when open */
+.faq-item[open] > summary {
+    background-color: #f1f3f5; /* Slightly darker background when open */
+    color: #343a40;
+}
+
+/* Change icon to minus and rotate it when open */
+.faq-item[open] > summary::before {
+    content: '−'; /* Minus sign */
+    transform: translateY(-50%) rotate(180deg); /* Rotate the plus sign */
+    color: #007bff; /* Change color when open */
+}
+
+/* Style the content visibility when open (optional, for fade effect) */
+/* .faq-item[open] .faq-content {
+    opacity: 1;
+    visibility: visible;
+} */
+
+/* Add a subtle hover effect on the summary */
+.faq-item summary:hover {
+    background-color: #f8f9fa;
+}
+.faq-item[open] > summary:hover {
+     background-color: #e9ecef; /* Slightly different hover when open */
+}

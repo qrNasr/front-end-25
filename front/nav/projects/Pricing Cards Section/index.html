@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Cards Section</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .pricing-cards {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 250px;
+        text-align: center;
+    }
+
+    .card h2 {
+        margin-top: 0;
+    }
+
+    .card ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .card button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .card button:hover {
+        background-color: #0056b3;
+    }
+
+    @media (max-width: 600px) {
+        .pricing-cards {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            width: 90%;
+            margin-bottom: 20px;
+        }
+    }
+</style>
+<script>
+    // JavaScript to handle button clicks can be added here
+    document.querySelectorAll('.card button').forEach(button => {
+        button.addEventListener('click', () => {
+            alert('Plan chosen!');
+        });
+    });
+</script>
+</section>
+<!-- End of Pricing Cards Section -->
+<script>
+    // Additional JavaScript can be added here
+    console.log('Pricing Cards Section Loaded');
+</script>
+<footer>
+    <p>&copy; 2023 Pricing Cards Section</p>
+    <p>All rights reserved.</p>
+</footer>
+<style>
+    footer {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    footer p:last-child {
+        font-size: 12px;
+        color: #777;
+    }
+</style>
+
+<body>
+    <!-- Pricing Cards Section -->
+    <section class="pricing-cards">
+        <div class="card">
+            <h2>Basic Plan</h2>
+            <p>$10/month</p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+            </ul>
+            <button>Choose Plan</button>
+        </div>
+        <div class="card">
+            <h2>Standard Plan</h2>
+            <p>$20/month</p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+                <li>Feature 4</li>
+            </ul>
+            <button>Choose Plan</button>
+        </div>
+        <div class="card">
+            <h2>Premium Plan</h2>
+            <p>$30/month</p>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+                <li>Feature 4</li>
+                <li>Feature 5</li>
+            </ul>
+            <button>Choose Plan</button>
+        </div>
+    </section>
+
+    <!-- <script>
+        // Additional JavaScript for footer can be added here
+        console.log('Footer Loaded');
+        document.querySelector('footer').addEventListener('click', () => {
+            alert('Footer clicked!');
+        });
+    </script>
+    <script>
+        // Additional JavaScript for interactivity can be added here
+        console.log('Additional JavaScript Loaded');
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM fully loaded and parsed');
+        });
+        window.addEventListener('resize', () => {
+            console.log('Window resized');
+        });
+        window.addEventListener('scroll', () => {
+            console.log('Window scrolled');
+        });
+        window.addEventListener('load', () => {
+            console.log('Window fully loaded');
+        });
+        window.addEventListener('beforeunload', () => {
+            console.log('Window about to unload');
+        });
+        window.addEventListener('unload', () => {
+            console.log('Window unloaded');
+        });
+        window.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                console.log('Document hidden');
+            } else {
+                console.log('Document visible');
+            }
+        });
+        window.addEventListener('focus', () => {
+            console.log('Window focused');
+        });
+        window.addEventListener('blur', () => {
+            console.log('Window blurred');
+        });
+        window.addEventListener('error', (event) => {
+            console.error('Error occurred:', event.message);
+        });
+        window.addEventListener('keydown', (event) => {
+            console.log('Key pressed:', event.key);
+        });
+        window.addEventListener('keyup', (event) => {
+            console.log('Key released:', event.key);
+        });
+        window.addEventListener('click', (event) => {
+            console.log('Mouse clicked at:', event.clientX, event.clientY);
+        });
+        window.addEventListener('dblclick', (event) => {
+            console.log('Mouse double-clicked at:', event.clientX, event.clientY);
+        });
+        window.addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+            console.log('Context menu opened at:', event.clientX, event.clientY);
+        });          -->
+</body >
+</html >

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding CSS Layouts</title>
+
+    <!-- CSS for the lesson page itself and layout examples -->
+    <style>
+        /* Basic Page Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f9; /* Lighter background */
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px; /* Wider container for layout examples */
+            margin: 25px auto;
+            background-color: #ffffff;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50; /* Dark blue-grey */
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #3498db; /* Blue */
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-top: 45px;
+            color: #e67e22; /* Orange */
+            border-left: 4px solid #e67e22;
+            padding-left: 10px;
+        }
+
+        h3 {
+            color: #3498db; /* Blue */
+            margin-top: 25px;
+            font-weight: 600;
+        }
+
+        /* Code Blocks */
+        pre {
+            background-color: #ecf0f1; /* Light grey */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            border: 1px solid #bdc3c7; /* Grey border */
+            margin-top: 10px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #ecf0f1;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-size: 0.95em;
+        }
+         pre code {
+             padding: 0;
+             background-color: transparent;
+             border-radius: 0;
+             font-size: inherit;
+        }
+
+
+        /* Rendered Example Styling */
+        .rendered-example {
+            border: 2px dashed #95a5a6; /* Grey dashed border */
+            padding: 20px;
+            margin-top: 15px;
+            margin-bottom: 30px;
+            background-color: #fdfefe; /* Very light background */
+            border-radius: 5px;
+            min-height: 100px; /* Ensure examples have some height */
+            position: relative; /* Crucial for absolute positioning examples */
+            overflow: hidden; /* Helps contain floats and absolutely positioned elements */
+        }
+
+        .rendered-example h4 {
+            margin-top: 0;
+            color: #7f8c8d; /* Grey */
+            font-size: 1.1em;
+            text-align: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 5px;
+        }
+
+        /* Helper styles for boxes within examples */
+        .box {
+            color: white;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .box-blue { background-color: #3498db; }
+        .box-green { background-color: #2ecc71; }
+        .box-red { background-color: #e74c3c; }
+        .box-purple { background-color: #9b59b6; }
+        .box-small { width: 80px; height: 40px; padding: 5px; line-height: 40px; display: inline-block; /* For inline-block demo */}
+        .box-large { min-height: 50px; }
+
+
+        /* --- Specific Layout Example Styles --- */
+
+        /* Display Property Example */
+        .display-example .box-inline { display: inline; margin: 0 5px; padding: 5px; }
+        .display-example .box-inline-block { display: inline-block; width: 100px; }
+        .display-example .box-block { display: block; margin-bottom: 10px; }
+        .display-example .box-none { display: none; }
+
+        /* Positioning Example */
+        .position-example .pos-relative {
+            position: relative;
+            left: 30px; /* Move right from original position */
+            top: 10px; /* Move down from original position */
+            z-index: 1; /* Stack above others if overlapping */
+        }
+        .position-example .pos-absolute {
+            position: absolute;
+            bottom: 10px; /* 10px from bottom of .rendered-example */
+            right: 10px; /* 10px from right of .rendered-example */
+            width: 120px;
+            z-index: 2;
+        }
+         .position-example .pos-fixed {
+            /* NOTE: position:fixed is relative to viewport, difficult to demo cleanly inside a small box. */
+            /* This simulates it sticking to the example box bottom-left */
+             position: absolute; /* Using absolute for demo purposes */
+             background-color: #f1c40f; /* Yellow */
+             bottom: 10px;
+             left: 10px;
+             width: 100px;
+             z-index: 3;
+        }
+         .position-example .pos-sticky {
+            /* NOTE: position:sticky requires scrolling. Hard to demo here. */
+            /* We'll just show it as a normal box */
+            background-color: #1abc9c; /* Teal */
+         }
+
+        /* Float Example */
+        .float-example .float-left {
+            float: left;
+            width: 100px;
+            margin-right: 15px;
+            margin-bottom: 5px; /* Add space below */
+        }
+        .float-example .clear-fix {
+            clear: both; /* Important: Clears the float */
+             border-top: 1px solid #ccc; /* Visual separator */
+             padding-top: 10px;
+             margin-top: 10px;
+        }
+         .float-example p { /* Basic paragraph styling for float demo */
+            line-height: 1.4;
+            margin-bottom: 10px;
+         }
+
+        /* Flexbox Example */
+        .flex-container {
+            display: flex;
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+            min-height: 120px; /* Give it space */
+        }
+        .flex-example-row .flex-container {
+             /* Default: row, align-items: stretch, justify-content: flex-start */
+        }
+         .flex-example-row-center .flex-container {
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically */
+        }
+         .flex-example-col .flex-container {
+             flex-direction: column; /* Stack items vertically */
+             align-items: flex-start; /* Align items to the left */
+         }
+         .flex-item {
+             /* Basic flex item styling */
+             width: 80px; /* Give items some base width */
+             /* height is often determined by content or align-items */
+         }
+         .flex-item-grow { flex-grow: 1; background-color: #8e44ad; /* Darker purple */} /* This item will take up extra space */
+
+
+        /* Grid Example */
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto; /* 3 equal-width columns */
+            /* Or: grid-template-columns: 1fr 1fr 1fr; */
+            gap: 10px; /* Space between grid cells */
+            background-color: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+        }
+         .grid-container-complex {
+            display: grid;
+            grid-template-columns: 1fr 2fr; /* First column 1 part, second 2 parts */
+            grid-template-rows: auto auto; /* Define rows */
+            gap: 10px;
+            background-color: #d6eaf8; /* Lighter blue */
+            padding: 10px;
+            border-radius: 4px;
+         }
+         .grid-item {
+             /* Basic grid item styling */
+             padding: 20px; /* Override default box padding */
+         }
+         .grid-item-span {
+             grid-column: span 2; /* Make this item span 2 columns */
+             background-color: #e67e22; /* Orange */
+         }
+          .grid-item-span-row {
+             grid-row: span 2; /* Make this item span 2 rows */
+             background-color: #16a085; /* Darker Teal */
+             grid-column: 2 / 3; /* Place in second column */
+             grid-row: 1 / 3; /* Place in rows 1 through 2 */
+         }
+
+        /* --- End Specific Layout Example Styles --- */
+
+        hr { border: 0; height: 1px; background-color: #bdc3c7; margin: 40px 0; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>CSS Layout Techniques</h1>
+        </header>
+
+        <section id="intro">
+            <p>Welcome! HTML structures your content, but CSS controls how it's visually arranged on the page. This is called **layout**. Understanding layout is key to building well-organized and visually appealing websites. Let's explore the common methods.</p>
+        </section>
+
+        <hr>
+
+        <!-- Normal Flow -->
+        <section id="normal-flow">
+            <h2>1. Normal Flow (Static Positioning)</h2>
+            <p>By default, elements follow the **Normal Flow**. This means:</p>
+            <ul>
+                <li><strong>Block-level elements</strong> (like <code><div></code>, <code><p></code>, <code><h1></code>) stack vertically, each starting on a new line and taking up the full available width.</li>
+                <li><strong>Inline elements</strong> (like <code><span></code>, <code><a></code>, <code><strong></code>) flow horizontally within the text, line by line, only taking up as much width as their content needs.</li>
+            </ul>
+            <p>This is the default behavior if you don't apply specific layout CSS.</p>
+            <div class="rendered-example">
+                <h4>Normal Flow Example</h4>
+                <div class="box box-blue box-large">I am a DIV (Block-level)</div>
+                <div class="box box-green box-large">I am another DIV (Block-level)</div>
+                <p>This paragraph contains <span class="box box-red" style="padding: 2px 5px;">a SPAN (Inline)</span> and <strong class="box box-purple" style="padding: 2px 5px;">STRONG text (Inline)</strong> flowing within the line.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Display Property -->
+        <section id="display-property">
+            <h2>2. The `display` Property</h2>
+            <p>The <code>display</code> property is fundamental. It lets you change how an element behaves in the layout flow. Common values:</p>
+            <ul>
+                <li><code>block</code>: Makes an element behave like a block-level element (stacks vertically, full width).</li>
+                <li><code>inline</code>: Makes an element behave like an inline element (flows horizontally, only content width). Width/height properties often don't apply.</li>
+                <li><code>inline-block</code>: A hybrid! Flows horizontally like inline elements, but you *can* set width, height, padding, and margins like block elements. Very useful!</li>
+                <li><code>none</code>: Hides the element completely, removing it from the layout as if it wasn't there.</li>
+                <li><code>flex</code>: Enables Flexbox layout (see section below).</li>
+                <li><code>grid</code>: Enables CSS Grid layout (see section below).</li>
+            </ul>
+             <strong>CSS Used in Example:</strong>
+            <pre><code>.box-inline { display: inline; }
+.box-inline-block { display: inline-block; width: 100px; }
+.box-block { display: block; margin-bottom: 10px; }
+.box-none { display: none; }</code></pre>
+            <div class="rendered-example display-example">
+                <h4>Display Property Example</h4>
+                <div class="box box-blue box-inline">Inline Box</div>
+                <div class="box box-red box-inline">Inline Box 2</div>
+                <hr style="margin: 10px 0;">
+                <div class="box box-green box-inline-block">Inline-Block (Width set)</div>
+                <div class="box box-purple box-inline-block">Inline-Block 2</div>
+                <hr style="margin: 10px 0;">
+                <div class="box box-blue box-block">Block Box (Forces new line)</div>
+                <div class="box box-red box-none">I am Hidden (display: none)</div>
+                <div class="box box-green box-block">Another Block Box</div>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Positioning -->
+        <section id="positioning">
+            <h2>3. The `position` Property</h2>
+            <p>The <code>position</code> property, along with `top`, `right`, `bottom`, `left`, and `z-index`, allows you to take elements *out* of the normal flow and place them precisely.</p>
+            <ul>
+                <li><code>static</code>: Default value. Element stays in the normal flow. `top/right/bottom/left/z-index` have no effect.</li>
+                <li><code>relative</code>: Element stays *in* the normal flow (space is reserved for it), but you can shift it using `top/right/bottom/left` relative to its original position. Also creates a positioning context for absolute children.</li>
+                <li><code>absolute</code>: Element is removed *from* the normal flow. It's positioned relative to its nearest *positioned* ancestor (an ancestor with `position` set to `relative`, `absolute`, `fixed`, or `sticky`). If none exists, it's relative to the initial containing block (often the `<html>` element).</li>
+                <li><code>fixed</code>: Element is removed *from* the normal flow and positioned relative to the **viewport** (the browser window). It stays in the same place even when the page is scrolled.</li>
+                <li><code>sticky</code>: A hybrid. Acts like `relative` until it reaches a specified threshold (e.g., `top: 0`) during scrolling, then it acts like `fixed`. Requires a scrollable ancestor.</li>
+            </ul>
+             <p><strong>Note:</strong> The `fixed` and `sticky` examples are hard to demonstrate perfectly in a small box; `fixed` normally relates to the whole window, and `sticky` needs scrolling content.</p>
+             <strong>CSS Used in Example:</strong>
+            <pre><code>.rendered-example { position: relative; /* Parent context for absolute */ }
+
+.pos-relative { position: relative; left: 30px; top: 10px; z-index: 1; }
+.pos-absolute { position: absolute; bottom: 10px; right: 10px; z-index: 2; }
+.pos-fixed { /* Simulated */ position: absolute; bottom: 10px; left: 10px; z-index: 3; }
+.pos-sticky { /* Shown static */ }</code></pre>
+             <div class="rendered-example position-example">
+                 <h4>Position Property Example</h4>
+                 <div class="box box-blue">Static (Normal Flow)</div>
+                 <div class="box box-green pos-relative">Relative (Shifted)</div>
+                 <div class="box box-red pos-absolute">Absolute (Bottom-Right of grey box)</div>
+                 <div class="box pos-fixed">Fixed (Simulated Bottom-Left)</div>
+                 <div class="box pos-sticky">Sticky (Acts Static Here)</div>
+                 <div class="box box-blue">Static (Normal Flow Again)</div>
+             </div>
+        </section>
+
+        <hr>
+
+        <!-- Floats -->
+        <section id="floats">
+            <h2>4. Floats (Legacy Layout)</h2>
+            <p>The <code>float</code> property (values `left` or `right`) was originally intended for wrapping text around images. It takes an element out of the normal flow and shifts it to the left or right, allowing subsequent content to flow around it.</p>
+            <p>Floats were heavily used for creating multi-column layouts before Flexbox and Grid, but this often led to complex issues requiring "clearfix" hacks.</p>
+            <p><strong>Use floats primarily for their intended purpose (like image wrapping) and prefer Flexbox or Grid for main page layouts.</strong></p>
+            <p>The <code>clear</code> property (`left`, `right`, `both`) is used on an element *after* a float to ensure it moves below the floated element(s).</p>
+             <strong>CSS Used in Example:</strong>
+            <pre><code>.float-left {
+    float: left;
+    width: 100px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+.clear-fix { clear: both; } /* Essential after floats */
+</code></pre>
+             <div class="rendered-example float-example">
+                 <h4>Float Example (Image Wrapping)</h4>
+                 <div class="box box-purple float-left">Floated Left Box</div>
+                 <p>This text flows around the floated box. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                 <p>More text flowing here. Notice how it wraps naturally around the element that has the 'float: left' property applied to it. This was its original purpose.</p>
+                 <div class="clear-fix"></div> <!-- Clear the float -->
+                 <p>This text appears *below* the floated element because of the 'clear: both' applied to an element before it (or a container).</p>
+             </div>
+        </section>
+
+         <hr>
+
+        <!-- Flexbox -->
+        <section id="flexbox">
+            <h2>5. Flexbox (Modern 1D Layout)</h2>
+            <p>Flexible Box Layout (Flexbox) is a modern CSS module designed for **one-dimensional layouts** – arranging items in a single row or a single column. It makes it easy to align items, distribute space, and change the order of elements.</p>
+            <p>Key Concepts:</p>
+            <ul>
+                <li><strong>Flex Container:</strong> The parent element with <code>display: flex;</code> applied.</li>
+                <li><strong>Flex Items:</strong> The direct children of the flex container.</li>
+                <li><strong>Main Axis:</strong> The primary direction items are laid out in (row or column, controlled by `flex-direction`).</li>
+                <li><strong>Cross Axis:</strong> The direction perpendicular to the main axis.</li>
+            </ul>
+            <p>Common Container Properties: `display: flex`, `flex-direction`, `justify-content` (aligns items along the main axis), `align-items` (aligns items along the cross axis), `flex-wrap`.</p>
+            <p>Common Item Properties: `flex-grow`, `flex-shrink`, `flex-basis` (often set via the `flex` shorthand), `order`, `align-self`.</p>
+             <strong>CSS Used in Examples:</strong>
+            <pre><code>/* Basic Container */
+.flex-container { display: flex; /* ... other styles */ }
+
+/* Example 1: Row (Default), Centered */
+.flex-example-row-center .flex-container {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Example 2: Column */
+.flex-example-col .flex-container {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Flex Item Example */
+.flex-item-grow { flex-grow: 1; } /* Takes extra space */
+</code></pre>
+             <div class="rendered-example flex-example-row">
+                 <h4>Flexbox Example (Default Row)</h4>
+                 <div class="flex-container">
+                     <div class="box box-blue flex-item">Item 1</div>
+                     <div class="box box-green flex-item">Item 2</div>
+                     <div class="box box-red flex-item">Item 3</div>
+                 </div>
+             </div>
+             <div class="rendered-example flex-example-row-center">
+                 <h4>Flexbox Example (Row, Centered Horiz & Vert)</h4>
+                 <div class="flex-container">
+                     <div class="box box-blue flex-item">Item 1</div>
+                     <div class="box box-green flex-item">Item 2</div>
+                     <div class="box box-red flex-item">Item 3</div>
+                 </div>
+             </div>
+              <div class="rendered-example flex-example-col">
+                 <h4>Flexbox Example (Column, with Grow)</h4>
+                 <div class="flex-container">
+                     <div class="box box-blue flex-item">Item 1</div>
+                     <div class="box box-green flex-item flex-item-grow">Item 2 (Grows)</div>
+                     <div class="box box-red flex-item">Item 3</div>
+                 </div>
+             </div>
+        </section>
+
+         <hr>
+
+        <!-- CSS Grid -->
+        <section id="grid">
+            <h2>6. CSS Grid (Modern 2D Layout)</h2>
+            <p>CSS Grid Layout is designed for **two-dimensional layouts** – arranging items in both rows and columns simultaneously. It's incredibly powerful for creating complex page structures.</p>
+             <p>Key Concepts:</p>
+            <ul>
+                <li><strong>Grid Container:</strong> The parent element with <code>display: grid;</code> applied.</li>
+                <li><strong>Grid Items:</strong> The direct children of the grid container.</li>
+                <li><strong>Grid Lines:</strong> The dividing lines that make up the structure of the grid.</li>
+                <li><strong>Grid Tracks:</strong> The space between two adjacent grid lines (rows or columns).</li>
+                <li><strong>Grid Cells:</strong> The space defined by the intersection of a row and column track.</li>
+                <li><strong>Grid Areas:</strong> A rectangular space covering one or more grid cells.</li>
+            </ul>
+             <p>Common Container Properties: `display: grid`, `grid-template-columns`, `grid-template-rows`, `gap` (or `grid-gap`), `grid-template-areas`, `justify-items`, `align-items`.</p>
+             <p>Common Item Properties: `grid-column-start`/`end` (or `grid-column`), `grid-row-start`/`end` (or `grid-row`), `grid-area`, `justify-self`, `align-self`.</p>
+              <strong>CSS Used in Examples:</strong>
+            <pre><code>/* Basic Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto; /* 3 equal columns */
+    gap: 10px;
+}
+
+/* Complex Grid */
+.grid-container-complex {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Ratio-based columns */
+    grid-template-rows: auto auto;
+    gap: 10px;
+}
+
+/* Spanning Items */
+.grid-item-span { grid-column: span 2; }
+.grid-item-span-row {
+    grid-column: 2 / 3; /* Start line 2, end line 3 */
+    grid-row: 1 / 3;    /* Start line 1, end line 3 */
+}</code></pre>
+              <div class="rendered-example grid-example">
+                 <h4>Grid Example (Simple 3-Column)</h4>
+                 <div class="grid-container">
+                     <div class="box box-blue grid-item">1</div>
+                     <div class="box box-green grid-item">2</div>
+                     <div class="box box-red grid-item">3</div>
+                     <div class="box box-purple grid-item">4</div>
+                     <div class="box box-blue grid-item">5</div>
+                 </div>
+             </div>
+              <div class="rendered-example grid-example-complex">
+                 <h4>Grid Example (Complex Spanning)</h4>
+                 <div class="grid-container-complex">
+                     <div class="box box-blue grid-item">A</div>
+                     <div class="box grid-item grid-item-span-row">B (Spans Rows 1&2 in Col 2)</div>
+                     <div class="box box-red grid-item">C</div>
+                     <div class="box grid-item grid-item-span">D (Spans 2 Columns in Row 3 conceptually)</div>
+                 </div>
+             </div>
+        </section>
+
+        <hr>
+
+        <section id="conclusion">
+            <h2>Layout: Choosing the Right Tool</h2>
+            <p>Understanding these layout methods is essential:</p>
+            <ul>
+                <li>Use **Normal Flow** as the baseline.</li>
+                <li>Use `display: inline-block` for simple side-by-side elements.</li>
+                <li>Use `position` for specific placement needs (overlays, fixed headers) but sparingly for main layout.</li>
+                <li>Use `float` mainly for text wrapping around images.</li>
+                <li>Use **Flexbox** for arranging items in one dimension (rows OR columns) - great for components, navigation, aligning items.</li>
+                <li>Use **CSS Grid** for arranging items in two dimensions (rows AND columns) - ideal for overall page structure and complex layouts.</li>
+            </ul>
+            <p>Often, you'll combine these techniques. For example, a page might use Grid for the main structure, Flexbox for the navigation bar inside the header, and floats for images within articles.</p>
+            <p>Keep practicing! Tools like your browser's Developer Tools (Inspect Element) are invaluable for experimenting with and debugging CSS layouts.</p>
+        </section>
+
+    </div> <!-- End of .container -->
+
+</body>
+</html>

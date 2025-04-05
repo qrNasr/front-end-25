@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your existing CSS -->
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+    <div class="container"> <!-- Assuming you used a container class -->
+
+        <header>
+            <h1>Your Name</h1>
+            <!-- Optional: Simple Nav -->
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>Hello! I'm [Your Name], a passionate learner exploring the world of web development. I enjoy creating things for the web and solving problems. This portfolio showcases my journey so far.</p>
+                <!-- *** NEW: Button and Paragraph for Fun Fact *** -->
+                <button id="reveal-button">Reveal a Fun Fact!</button>
+                <p id="fun-fact" class="fun-fact-style"></p> <!-- This paragraph will be filled by JS -->
+            </section>
+
+            <hr> <!-- Optional Separator -->
+
+            <section id="skills">
+                <h2>Skills</h2>
+                <p>Here are some technologies I'm learning:</p>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript (Basics)</li>
+                    <li>Problem Solving</li>
+                    <li>Learning Quickly!</li>
+                </ul>
+            </section>
+
+            <hr> <!-- Optional Separator -->
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>You can reach out (theoretically):</p>
+                <ul>
+                    <li><a href="#">Email Me</a></li>
+                    <li><a href="#">LinkedIn Profile</a></li>
+                    <li><a href="#">GitHub</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2023 Your Name</p>
+        </footer>
+
+    </div> <!-- End of container -->
+
+    <!-- ************************************** -->
+    <!-- *** JAVASCRIPT CODE STARTS HERE *** -->
+    <!-- ************************************** -->
+    <script>
+        // This code runs after the HTML above has been loaded by the browser.
+
+        // 1. Get references to the HTML elements we need to work with.
+        // We use their unique 'id' attributes.
+        const revealButton = document.getElementById('reveal-button');
+        const funFactParagraph = document.getElementById('fun-fact');
+
+        // Optional: Check if the elements were found (good practice)
+        if (revealButton && funFactParagraph) {
+
+            // 2. Add an 'event listener' to the button.
+            // This tells the browser: "When the element 'revealButton' is 'clicked',
+            // execute the function provided."
+            revealButton.addEventListener('click', function() {
+                // This is the function that runs ONLY when the button is clicked
+
+                // 3. Change the text content of the paragraph.
+                funFactParagraph.textContent = "Fun Fact: I can drink coffee and fall asleep almost immediately! ☕😴";
+
+                // 4. Optional: Change the button text after clicking
+                revealButton.textContent = "Fact Revealed!";
+
+                // 5. Optional: Disable the button after clicking once
+                revealButton.disabled = true;
+
+                // 6. Optional: Add a class for styling (see CSS below)
+                funFactParagraph.classList.add('revealed');
+
+                console.log("Button clicked and fun fact revealed!"); // Message for browser console
+            });
+
+        } else {
+            // Log an error if elements weren't found (helps debugging)
+            console.error("Could not find the button or fun fact paragraph elements!");
+        }
+
+    </script>
+    <!-- *** JAVASCRIPT CODE ENDS HERE *** -->
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Advanced Layout Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: 150px 1fr 1fr 150px; /* Four columns */
+            grid-template-rows: 100px auto 50px; /* Three rows */
+            gap: 10px; /* Gap between rows and columns */
+            height: 100vh; /* Full viewport height */
+        }
+        header {
+            grid-column: 1 / 5; /* Span all four columns */
+            background-color: #4CAF50; /* Header background color */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            grid-column: 1 / 2; /* First column */
+            background-color: #f0f0f0; /* Navigation background color */
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 10px 0; /* Vertical spacing for links */
+        }
+        main {
+            grid-column: 2 / 4; /* Middle two columns */
+            background-color: #e0e0e0; /* Main content background color */
+            padding: 20px;
+        }
+        aside {
+            grid-column: 4 / 5; /* Last column */
+            background-color: #f9f9f9; /* Sidebar background color */
+            padding: 10px;
+        }
+        footer {
+            grid-column: 1 / 5; /* Span all four columns */
+            background-color: #4CAF50; /* Footer background color */
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="grid-container">
+        <header>
+            <h1>My Website Header</h1>
+        </header>
+
+        <nav>
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>Main Content</h2>
+            <p>This is the main content area where you can include articles, blog posts, or any other information relevant to your website.</p>
+        </main>
+
+        <aside>
+            <h2>Sidebar</h2>
+            <ul>
+                <li><a href="#related1">Related Link 1</a></li>
+                <li><a href="#related2">Related Link 2</a></li>
+                <li><a href="#related3">Related Link 3</a></li>
+            </ul>
+        </aside>
+
+        <footer>
+            <p>© 2024 My Website</p>
+        </footer>
+    </div>
+<!-- Explanation of the Code:
+
+    Grid Container: The .grid-container class is defined as a grid layout with four columns and three rows. The first and fourth columns are set to a fixed width of 150px, while the middle two columns are flexible, taking up the remaining space. The gap between rows and columns is set to 10px.
+    Grid Items:
+        Header: The <header> element spans all four columns in the first row, styled with a background color, centered text, and padding.
+        Navigation: The <nav> element occupies the first column in the second row, containing a vertical navigation menu.
+        Main Content: The <main> element spans the middle two columns in the second row, including a heading and a paragraph of text.
+        Sidebar: The <aside> element occupies the last column in the second row, containing a heading and a list of related links.
+        Footer: The <footer> element spans all four columns in the third row, styled similarly to the header.
+    Styling: Each grid item is styled with different background colors to distinguish them, and appropriate padding is applied to ensure the content is well-spaced and readable.
+ -->
+</body>
+</html>

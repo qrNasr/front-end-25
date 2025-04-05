@@ -1,0 +1,81 @@
+/* style_grid_placement.css */
+body { font-family: sans-serif; margin: 20px; }
+h1, h2 { text-align: center; margin-bottom: 0.5em; }
+h2 { margin-top: 1.5em; color: #880e4f; } /* Dark Pink */
+section { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; }
+p { font-size: 0.9em; margin-bottom: 10px; text-align: center; color: #333; }
+
+.grid-container {
+    display: grid;
+    gap: 10px;
+    background-color: #fce4ec;
+    padding: 10px;
+    border: 1px solid #f48fb1;
+}
+
+.item {
+    background-color: #c51162; /* Pink */
+    color: white;
+    padding: 20px;
+    border: 1px solid #880e4f;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    min-height: 50px; /* Min height */
+}
+
+/* --- Placement Example --- */
+.placement-lines {
+    /* Define a 3-col, 2-row explicit grid */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.placement-lines .place-1 {
+    /* Place using line numbers: row-start / col-start / row-end / col-end */
+    grid-area: 1 / 1 / 2 / 2; /* Row 1, Col 1 */
+    background-color: #aa00ff; /* Purple */
+}
+.placement-lines .place-2 {
+    grid-column-start: 3; /* Start at column line 3 */
+    grid-row-start: 1; /* Start at row line 1 */
+    background-color: #304ffe; /* Blue */
+}
+.placement-lines .place-3 {
+    grid-row: 2; /* Place in row 2 (shorthand for 2 / 3)*/
+    grid-column: 1 / span 2; /* Start at col 1, span 2 columns */
+    background-color: #00bfa5; /* Teal */
+}
+/* Items D & E will auto-place in the next available cells */
+
+
+/* --- Spanning Example --- */
+.spanning-implicit {
+    /* Define a 2-column initial grid */
+    grid-template-columns: 1fr 1fr;
+    /* No explicit rows defined - they will be created implicitly */
+}
+
+.spanning-implicit .span-3-cols {
+    /* This item forces the grid to behave as if it has 3 columns temporarily */
+    /* because it spans from line 1 to line 4 */
+    grid-column: 1 / 4; /* OR grid-column: span 3; */
+     background-color: #ff6f00; /* Orange */
+     /* Note: This might leave gaps or cause overlaps if not planned carefully */
+     /* It's often better to define enough columns explicitly */
+}
+
+.spanning-implicit .span-2-rows {
+    grid-row: span 2; /* This item spans 2 rows */
+    grid-column: 1; /* Place it in the first column */
+    background-color: #4caf50; /* Green */
+}
+/* Other items auto-place around the explicitly placed/spanned items */
+
+/*     How grid line numbers work (starting from 1).
+
+    How grid-area, grid-column-start/end, grid-row-start/end allow precise item placement.
+
+    How using span works with placement properties.
+
+    How the grid automatically creates implicit rows or columns when items span beyond the explicitly defined tracks. Use the Grid Inspector in DevTools to see these implicit tracks. */

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom, #f4f4f4, #e0e0e0);
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: left;
+            color: #222;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #222;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        select {
+            height: 34px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23777" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path d="M2 0L0 2h4z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            padding-right: 30px;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .radio-group {
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+        .radio-group label {
+            display: inline-block;
+            margin-right: 10px;
+            font-weight: normal;
+        }
+
+        .button-group {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .radio-group label{
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Us Today!</h2>
+        <form>
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" placeholder="First Name">
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Last Name">
+
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="email" placeholder="E-Mail Address">
+
+            <label for="phone">Phone #:</label>
+            <input type="text" id="phone" name="phone" placeholder="xxx-xxx-xxxx">
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Address">
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="City">
+
+            <label for="state">State:</label>
+            <select id="state" name="state">
+                <option value="" disabled selected>Please select your state</option>
+                <option value="CA">California</option>
+                <option value="NY">New York</option>
+                <option value="TX">Texas</option>
+                <option value="FL">Florida</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="zip-code">Zip Code:</label>
+            <input type="text" id="zip-code" name="zip-code" placeholder="Zip Code">
+
+            <label for="website">Website or domain name:</label>
+            <input type="text" id="website" name="website" placeholder="website or domain name">
+
+            <label>Do you have hosting?</label>
+            <div class="radio-group">
+                <input type="radio" id="hosting-yes" name="hosting" value="yes">
+                <label for="hosting-yes">Yes</label>
+                <input type="radio" id="hosting-no" name="hosting" value="no">
+                <label for="hosting-no">No</label>
+            </div>
+
+            <label for="project-description">Project Description:</label>
+            <textarea id="project-description" name="project-description" rows="4" placeholder="Project Description"></textarea>
+
+            <div class="button-group">
+                <button type="submit">Send</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

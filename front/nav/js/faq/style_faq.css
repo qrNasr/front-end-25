@@ -1,0 +1,86 @@
+/* style_faq.css (Updated) */
+
+/* Basic Reset & Body Styles - Keep As Is */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Lato', sans-serif; background-color: #f8f9fa; color: #343a40; line-height: 1.6; padding: 20px; }
+.container { max-width: 800px; margin: 40px auto; background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); }
+.faq-section h2 { text-align: center; font-size: 2.2rem; margin-bottom: 1.5em; color: #212529; }
+
+/* Styling for each FAQ Item (<details>) */
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden; /* Important for smooth animations later if added */
+}
+
+/* Styling for the Question (<summary>) */
+.faq-item summary {
+    display: block;
+    padding: 15px 45px 15px 20px;
+    font-weight: 700;
+    color: #495057;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s ease;
+    /* Prevent default browser disclosure triangle */
+    list-style: none;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { display: none; }
+
+/* Add custom icon using ::before */
+.faq-item summary::before {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #6c757d;
+    transition: transform 0.3s ease, color 0.2s ease;
+}
+
+/* Styling for the Answer Content */
+.faq-content {
+    padding: 0px 20px 0px 20px; /* Remove top/bottom padding initially */
+    color: #495057;
+    border-top: 1px solid #e9ecef;
+    /* --- HIDE BY DEFAULT using max-height for transition potential --- */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease-out, padding 0.4s ease-out; /* Smooth transition */
+}
+
+
+/* --- Styles When .is-active class is added by JS --- */
+
+.faq-item.is-active > summary { /* Style summary when parent has .is-active */
+    background-color: #f1f3f5;
+    color: #343a40;
+}
+
+.faq-item.is-active > summary::before { /* Style icon when parent has .is-active */
+    content: '−';
+    transform: translateY(-50%) rotate(180deg);
+    color: #007bff;
+}
+
+.faq-item.is-active .faq-content { /* Show content when parent has .is-active */
+     max-height: 500px; /* Set to a value larger than any expected content height */
+     opacity: 1;
+     padding-top: 20px; /* Re-add padding */
+     padding-bottom: 20px;
+}
+
+
+/* Add a subtle hover effect on the summary */
+.faq-item summary:hover {
+    background-color: #f8f9fa;
+}
+.faq-item.is-active > summary:hover {
+     background-color: #e9ecef;
+}

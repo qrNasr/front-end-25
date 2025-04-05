@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7fb;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #008080;
+            margin-bottom: 20px;
+            grid-column: 1 / 3;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #008080;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        select {
+            height: 34px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23777" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path d="M2 0L0 2h4z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            padding-right: 30px;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        .gender-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            grid-column: 1 / 3;
+        }
+
+        .gender-group label {
+            display: inline-block;
+            margin-right: 5px;
+            font-weight: normal;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            resize: vertical;
+            grid-column: 1 / 3;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            grid-column: 1 / 3;
+        }
+
+        button {
+            background-color: #ff7f50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #ff6347;
+        }
+
+        .local-address-group{
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .gender-group{
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h2>Customer Registration</h2>
+
+        <label for="passport-number">Passport Number:</label>
+        <input type="text" id="passport-number" name="passport-number" placeholder="Enter Passport Number">
+
+        <label for="passport-exp-date">Passport Exp Date:</label>
+        <input type="date" id="passport-exp-date" name="passport-exp-date">
+
+        <label for="title">Title:</label>
+        <select id="title" name="title">
+            <option value="" disabled selected>Select Title</option>
+            <option value="mr">Mr.</option>
+            <option value="mrs">Mrs.</option>
+            <option value="ms">Ms.</option>
+            <option value="dr">Dr.</option>
+        </select>
+
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" placeholder="Enter First Name">
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" placeholder="Enter Last Name">
+
+        <label for="demo-car-id">Demo-Car ID:</label>
+        <input type="text" id="demo-car-id" name="demo-car-id" placeholder="Enter Demo-Car ID">
+
+        <label for="company-card-no">Company Card No:</label>
+        <input type="text" id="company-card-no" name="company-card-no" placeholder="Enter Company Card No">
+
+        <label for="birth-date">Birth Date:</label>
+        <input type="date" id="birth-date" name="birth-date">
+
+        <label for="license-country">License Country:</label>
+        <select id="license-country" name="license-country">
+             <option value="" disabled selected>Select a Country</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="uk">UK</option>
+             <option value="germany">Germany</option>
+        </select>
+
+        <label for="issue-date">Issue Date:</label>
+        <input type="date" id="issue-date" name="issue-date">
+
+         <label for="iata">IATA:</label>
+        <input type="text" id="iata" name="iata" placeholder="Enter IATA">
+
+        <label for="phone1">Phone 1:</label>
+        <input type="tel" id="phone1" name="phone1" placeholder="Enter Phone 1">
+
+        <label for="driver-license-no">Driver License No:</label>
+        <input type="text" id="driver-license-no" name="driver-license-no" placeholder="Enter Driver License No">
+
+        <label for="exp-date">Exp Date:</label>
+        <input type="date" id="exp-date" name="exp-date">
+
+        <label for="phone2">Phone 2:</label>
+        <input type="tel" id="phone2" name="phone2" placeholder="Enter Phone 2">
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" placeholder="Enter Address"></textarea>
+
+        <label for="fax">Fax 1:</label>
+        <input type="text" id="fax" name="fax" placeholder="Enter Fax">
+
+        <label for="city-state">City/State:</label>
+        <input type="text" id="city-state" name="city-state" placeholder="Enter City/State">
+
+        <label for="zip">Zip:</label>
+        <input type="text" id="zip" name="zip" placeholder="Enter Zip">
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="" disabled selected>Select a Country</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="uk">UK</option>
+            <option value="germany">Germany</option>
+        </select>
+
+        <label for="sms-number">SMS Number:</label>
+        <input type="tel" id="sms-number" name="sms-number" placeholder="Enter SMS Number">
+
+        <label for="employer">Employer:</label>
+        <input type="text" id="employer" name="employer" placeholder="Enter Employer">
+
+        <label for="customer-source-type">Customer Source Type:</label>
+        <select id="customer-source-type" name="customer-source-type">
+            <option value="" disabled selected>Select a Source</option>
+            <option value="online">Online</option>
+            <option value="referral">Referral</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter Email">
+
+        <div class="local-address-group">
+            <label for="local-address">Local Address:</label>
+            <textarea id="local-address" name="local-address" rows="3" placeholder="Enter Local Address"></textarea>
+
+            <label for="local-phone">Local Phone:</label>
+            <input type="tel" id="local-phone" name="local-phone" placeholder="Enter Local Phone">
+        </div>
+
+        <div class="button-group">
+            <button type="submit">Submit</button>
+            <button type="reset">Cancel</button>
+        </div>
+    </form>
+</body>
+</html>

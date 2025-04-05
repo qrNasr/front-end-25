@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* Three equal columns */
+            gap: 20px;
+            /* Gap between items */
+            padding: 20px;
+        }
+
+        .pricing-card {
+            background-color: #f0f0f0;
+            /* Card background color */
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007BFF;
+            /* Footer background color */
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div class="pricing-card">
+            <h3>Basic Plan</h3>
+            <p>Price: $10/month</p>
+            <p>Features: Feature 1, Feature 2</p>
+            <button>Sign Up</button>
+        </div>
+        <div class="pricing-card">
+            <h3>Standard Plan</h3>
+            <p>Price: $20/month</p>
+            <p>Features: Feature 1, Feature 2, Feature 3</p>
+            <button>Sign Up</button>
+        </div>
+        <div class="pricing-card">
+            <h3>Premium Plan</h3>
+            <p>Price: $30/month</p>
+            <p>Features: Feature 1, Feature 2, Feature 3, Feature 4</p>
+            <button>Sign Up</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 My Pricing Table</p>
+    </footer>
+
+</body>
+
+</html>

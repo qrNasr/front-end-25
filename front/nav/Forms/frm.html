@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6f7fb;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            color: #008080;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #008080;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        select {
+            height: 34px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%23777" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path d="M2 0L0 2h4z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            padding-right: 30px;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+
+        .gender-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .gender-group label {
+            display: inline-block;
+            margin-right: 5px;
+            font-weight: normal;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        .hobbies-group {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .hobbies-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #008080;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .hobbies-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .hobbies-options input[type="checkbox"] {
+            margin-right: 5px;
+            width: auto;
+        }
+        .qualification-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .qualification-table th, .qualification-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .qualification-table th {
+            background-color: #f0f0f0;
+            color: #008080;
+        }
+         .qualification-table td input{
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .courses-group {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .courses-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #008080;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .courses-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .courses-options input[type="radio"] {
+            margin-right: 5px;
+            width: auto;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #ff7f50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #ff6347;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .hobbies-options, .courses-options{
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>STUDENT REGISTRATION FORM</h2>
+        <form>
+            <label for="first-name">FIRST NAME (max 30 characters a-z and A-Z)</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Enter First Name" maxlength="30">
+
+            <label for="last-name">LAST NAME (max 30 characters a-z and A-Z)</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Enter Last Name" maxlength="30">
+
+            <label for="date-of-birth">DATE OF BIRTH</label>
+            <input type="date" id="date-of-birth" name="date-of-birth">
+
+            <label for="email">EMAIL ID</label>
+            <input type="email" id="email" name="email" placeholder="Enter Email ID">
+
+            <label for="mobile-number">MOBILE NUMBER (10 digit number)</label>
+            <input type="text" id="mobile-number" name="mobile-number" placeholder="Enter Mobile Number" pattern="[0-9]{10}" maxlength="10">
+
+            <label for="gender">GENDER</label>
+            <div class="gender-group">
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Female</label>
+            </div>
+
+            <label for="address">ADDRESS</label>
+            <textarea id="address" name="address" rows="4" placeholder="Enter your address"></textarea>
+
+            <label for="city">CITY (max 30 characters a-z and A-Z)</label>
+            <input type="text" id="city" name="city" placeholder="Enter City" maxlength="30">
+
+            <label for="pin-code">PIN CODE (6 digit number)</label>
+            <input type="text" id="pin-code" name="pin-code" placeholder="Enter Pin Code" pattern="[0-9]{6}" maxlength="6">
+
+            <label for="state">STATE (max 30 characters a-z and A-Z)</label>
+            <input type="text" id="state" name="state" placeholder="Enter State" maxlength="30">
+
+            <label for="country">COUNTRY</label>
+            <select id="country" name="country">
+                <option value="india" selected>India</option>
+            </select>
+
+            <label>HOBBIES</label>
+            <div class="hobbies-group">
+                <div class="hobbies-options">
+                    <input type="checkbox" id="drawing" name="hobbies" value="drawing">
+                    <label for="drawing">Drawing</label>
+                </div>
+                <div class="hobbies-options">
+                    <input type="checkbox" id="singing" name="hobbies" value="singing">
+                    <label for="singing">Singing</label>
+                </div>
+                 <div class="hobbies-options">
+                    <input type="checkbox" id="dancing" name="hobbies" value="dancing">
+                    <label for="dancing">Dancing</label>
+                </div>
+                <div class="hobbies-options">
+                    <input type="checkbox" id="sketching" name="hobbies" value="sketching">
+                    <label for="sketching">Sketching</label>
+                </div>
+                 <div class="hobbies-options">
+                    <input type="checkbox" id="others" name="hobbies" value="others">
+                    <label for="others">Others</label>
+                </div>
+            </div>
+
+            <label>QUALIFICATION</label>
+            <table class="qualification-table">
+                <thead>
+                    <tr>
+                        <th>Sl.No.</th>
+                        <th>Examination</th>
+                        <th>Board</th>
+                        <th>Percentage</th>
+                        <th>Year of Passing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Class X</td>
+                        <td><input type="text" name="board_x" maxlength="10"></td>
+                        <td><input type="text" name="percentage_x"  pattern="^\d+(\.\d{1,2})?$"></td>
+                        <td><input type="text" name="year_x" pattern="[0-9]{4}" maxlength="4"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Class XII</td>
+                        <td><input type="text" name="board_xii" maxlength="10"></td>
+                        <td><input type="text" name="percentage_xii"  pattern="^\d+(\.\d{1,2})?$"></td>
+                        <td><input type="text" name="year_xii" pattern="[0-9]{4}" maxlength="4"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Graduation</td>
+                        <td><input type="text" name="board_grad" maxlength="10"></td>
+                        <td><input type="text" name="percentage_grad"  pattern="^\d+(\.\d{1,2})?$"></td>
+                        <td><input type="text" name="year_grad" pattern="[0-9]{4}" maxlength="4"></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Masters</td>
+                        <td><input type="text" name="board_master" maxlength="10"></td>
+                        <td><input type="text" name="percentage_master" pattern="^\d+(\.\d{1,2})?$"></td>
+                        <td><input type="text" name="year_master" pattern="[0-9]{4}" maxlength="4"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <label>COURSES APPLIED FOR</label>
+            <div class="courses-group">
+                 <div class="courses-options">
+                    <input type="radio" id="bca" name="course" value="bca">
+                    <label for="bca">BCA</label>
+                </div>
+                <div class="courses-options">
+                    <input type="radio" id="bcom" name="course" value="bcom">
+                    <label for="bcom">B.Com</label>
+                </div>
+                <div class="courses-options">
+                    <input type="radio" id="bsc" name="course" value="bsc">
+                    <label for="bsc">B.Sc</label>
+                </div>
+                <div class="courses-options">
+                    <input type="radio" id="ba" name="course" value="ba">
+                    <label for="ba">B.A</label>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
