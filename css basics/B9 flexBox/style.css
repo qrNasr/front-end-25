@@ -1,0 +1,76 @@
+body {
+    background-color: lightgray;
+}
+
+.main-nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Make the ul a flex container */
+    background-color: #333; /* Dark background for the nav */
+}
+
+.main-nav ul li {
+    margin: 0; /* Remove default list item margins */
+}
+
+.main-nav ul li a {
+    display: block; /* Make links fill the list item space */
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-align: center; /* Center the text in each link */
+}
+
+.main-nav ul li a:hover {
+    background-color: #555; /* Slightly lighter on hover */
+}
+
+#main-heading {
+    color: green;
+    text-decoration: underline;
+}
+
+.intro-paragraph {
+    font-weight: bold;
+    background-color: lightblue;
+    padding: 20px;
+    border: 2px dashed red;
+    margin: 30px;
+    display: block;
+}
+
+.intro-paragraph img {
+    float: left; /* Keep the float for the image */
+}
+
+.another-paragraph {
+    color: red;
+    border: 3px solid green;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: lightyellow;
+}
+
+.another-paragraph span {
+    font-weight: bolder;
+    color: purple;
+    display: block;
+    background-color: pink;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+[lang] {
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+[lang="fr"] {
+    background-color: lightcoral;
+    color: white;
+}

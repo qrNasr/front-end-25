@@ -1,0 +1,27 @@
+CSS provides properties to control each part of the box model:
+
+    Content: The size of the content area is often determined by the content itself, but you can influence it using properties like width and height.
+
+    Padding:
+        padding-top: Sets the top padding.
+        padding-right: Sets the right padding.
+        padding-bottom: Sets the bottom padding.
+        padding-left: Sets the left padding.
+        padding: A shorthand property to set all four padding values at once (e.g., padding: 10px; for all sides, or padding: 10px 20px; for top/bottom and left/right, or padding: 5px 10px 15px 20px; for top, right, bottom, left).   
+
+Border:
+
+    border-width: Sets the thickness of the border.
+    border-style: Sets the style of the border (e.g., solid, dashed, dotted, double).
+    border-color: Sets the color of the border.
+    border-top, border-right, border-bottom, border-left: To set properties for individual sides.
+    border: A shorthand property (e.g., border: 1px solid black;).
+
+Margin:
+
+    margin-top: Sets the top margin.
+    margin-right: Sets the right margin.
+    margin-bottom: Sets the bottom margin.
+    margin-left: Sets the left margin.
+    margin: A shorthand property similar to padding.   
+

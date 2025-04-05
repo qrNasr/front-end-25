@@ -1,0 +1,72 @@
+body {
+    background-color: lightgray;
+}
+
+#main-heading {
+    color: green;
+    text-decoration: underline;
+}
+
+.intro-paragraph {
+    font-weight: bold;
+    background-color: lightblue;
+    padding: 20px;
+    border: 2px dashed red;
+    margin: 30px;
+}
+
+.another-paragraph {
+    color: red;
+    border: 3px solid green;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: lightyellow;
+}
+
+.another-paragraph span {
+    font-weight: bolder;
+    color: purple;
+}
+
+[lang] {
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+[lang="fr"] {
+    background-color: lightcoral;
+    color: white;
+}
+
+a[href^="https"] {
+    font-weight: bold;
+}
+
+/* Make the inline <span> element behave like a block */
+.another-paragraph span {
+    display: block;
+    background-color: pink;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Make the block-level <p> element behave like inline-block */
+.intro-paragraph {
+    display: inline-block;
+    width: auto; /* Override default full width */
+    margin-right: 20px; /* Add some space to the right */
+}
+
+/* Make the inline <a> elements behave like blocks */
+a {
+    display: block;
+    border: 1px solid blue;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-decoration: none; /* Remove default underline from links */
+    color: black;
+}

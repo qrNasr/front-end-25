@@ -1,0 +1,133 @@
+Great! Let's experiment with the `justify-content` and `align-items` properties on our navigation bar to see how they affect the alignment and spacing of the navigation items.
+
+**Modifying `justify-content`:**
+
+The `justify-content` property controls the distribution of space along the main axis (which is horizontal in our case since `flex-direction` is set to the default `row`).
+
+**Step 1: Try `justify-content: space-between;`**
+
+Open your `styles.css` file and modify the `.main-nav ul` rule to include `justify-content: space-between;`:
+
+```css
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #333;
+    justify-content: space-between; /* Added this line */
+}
+```
+
+Save the file and refresh your browser. You should see that the navigation items are now spaced out with as much space as possible between them, and the first item is at the start and the last item is at the end of the navigation bar.
+
+**Step 2: Try `justify-content: center;`**
+
+Now, change `justify-content` to `center`:
+
+```css
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #333;
+    justify-content: center; /* Changed to center */
+}
+```
+
+Save and refresh. The navigation items should now be centered within the navigation bar, with equal space on both sides.
+
+**Step 3: Try `justify-content: space-around;`**
+
+Next, try `space-around`:
+
+```css
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #333;
+    justify-content: space-around; /* Changed to space-around */
+}
+```
+
+Save and refresh. With `space-around`, each navigation item has an equal amount of space around it. The space before the first item and after the last item will be half the size of the space between the items.
+
+**Modifying `align-items`:**
+
+The `align-items` property controls the alignment of flex items along the cross axis (which is vertical in our case). For `align-items` to have a noticeable effect in our current navigation bar, the flex container needs to have a defined height, or the flex items need to have different heights. Since our navigation items have similar heights based on their content and padding, let's adjust the height of the `nav` element to see `align-items` in action.
+
+**Step 4: Add a height to the `.main-nav` and try `align-items: flex-start;`**
+
+Add a height to the `.main-nav` in your `styles.css` and set `align-items`:
+
+```css
+.main-nav {
+    background-color: #333;
+    height: 50px; /* Added a fixed height */
+    display: flex; /* Ensure nav is also a flex container to align its content */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between; /* Or any other justify-content value */
+}
+
+.main-nav ul li {
+    margin: 0;
+}
+
+.main-nav ul li a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.main-nav ul li a:hover {
+    background-color: #555;
+}
+```
+
+Save and refresh. You should see that the navigation links are now aligned to the top of the `nav` container.
+
+**Step 5: Try `align-items: flex-end;`**
+
+Change `align-items` to `flex-end`:
+
+```css
+.main-nav {
+    background-color: #333;
+    height: 50px;
+    display: flex;
+    align-items: flex-end; /* Align items to the bottom */
+}
+```
+
+Save and refresh. The navigation links should now be aligned to the bottom of the `nav` container.
+
+**Step 6: Try `align-items: center;`**
+
+Finally, try `align-items: center;`:
+
+```css
+.main-nav {
+    background-color: #333;
+    height: 50px;
+    display: flex;
+    align-items: center; /* Align items to the vertical center */
+}
+```
+
+Save and refresh. The navigation links should now be vertically centered within the `nav` container.
+
+By experimenting with `justify-content` and `align-items`, you can see how easily Flexbox allows you to control the alignment and spacing of items in one dimension.
+
+Would you like to try using other Flexbox properties or perhaps move on to another CSS layout technique like CSS Grid?

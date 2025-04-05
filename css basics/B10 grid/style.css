@@ -1,0 +1,33 @@
+body {
+    background-color: lightgray;
+}
+
+.grid-container {
+    display: grid; /* Make it a grid container */
+    grid-template-columns: 200px auto; /* Two columns: 200px wide and the rest */
+    grid-template-rows: 50px auto 30px; /* Three rows: 50px, automatic height, 30px */
+    grid-gap: 10px; /* Gap between grid items */
+}
+
+.grid-item {
+    background-color: lightcoral;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.header {
+    grid-column: 1 / 3; /* Header spans both columns */
+}
+
+.sidebar {
+    /* Sidebar will automatically go in the first column of the second row */
+}
+
+.content {
+    /* Content will automatically go in the second column of the second row */
+}
+
+.footer {
+    grid-column: 1 / 3; /* Footer spans both columns */
+}

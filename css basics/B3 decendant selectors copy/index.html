@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Webpage</title>
+    <style>
+        body {
+            background-color: lightgray;
+        }
+
+        #main-heading {
+            color: green;
+            text-decoration: underline;
+        }
+
+        .intro-paragraph {
+            font-weight: bold;
+        }
+
+        .another-paragraph {
+            color: red;
+        }
+
+        /* Style any <span> element that is a descendant of an element with the class "another-paragraph" */
+        .another-paragraph span {
+            font-weight: bolder;
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Hello, World!</h1>
+    <p class="intro-paragraph">This is the first paragraph of text.</p>
+    <p class="another-paragraph">This is another paragraph with <span>some emphasized text</span> inside.</p>
+</body>
+<!-- Descendant Selector: The descendant selector allows you to select elements that are nested within other elements. It's defined by placing the ancestor selector followed by a space and then the descendant selector.
+ 
+Explanation of the Descendant Selector:
+
+    .another-paragraph span: This selector targets any <span> element that is a descendant (meaning it's inside, no matter how many levels deep) of an element with the class another-paragraph. The space between .another-paragraph and span is what defines the descendant relationship. 
+
+
+-->
+</html>
