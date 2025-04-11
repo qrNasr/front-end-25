@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Homepage</title>
+    <link rel="stylesheet" href="blog-styles.css">
+</head>
+<body>
+    <style>
+        body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header  header  header"
+        "main    middle  aside"
+        "footer  footer  footer";
+    min-height: 100vh;
+}
+
+header {
+    grid-area: header;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+.post {
+    padding: 20px;
+    margin: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+main {
+    grid-area: main;
+}
+
+.middle {
+    grid-area: middle;
+}
+
+aside {
+    grid-area: aside;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+aside li:last-child {
+    border-bottom: none;
+}
+
+aside a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.author {
+    font-size: 0.8em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.post a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8em;
+}
+    </style>
+    <header>
+        <h1>My Awesome Blog</h1>
+        <p>Sharing thoughts and ideas</p>
+    </header>
+    <main class="post">
+        <h2>First Blog Post Title</h2>
+        <p class="author">By John Doe | April 6, 2025</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+        <a href="#">Read More</a>
+    </main>
+    <div class="post middle">
+        <h2>Another Interesting Article</h2>
+        <p class="author">By Jane Smith | April 5, 2025</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum...</p>
+        <a href="#">Read More</a>
+    </div>
+    <aside class="post">
+        <h2>Featured Content</h2>
+        <ul>
+            <li><a href="#">Popular Post 1</a></li>
+            <li><a href="#">Top Article of the Month</a></li>
+            <li><a href="#">Our Latest Series</a></li>
+        </ul>
+    </aside>
+    <footer>
+        <p>&copy; 2025 My Awesome Blog</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM with Event Listener</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM with Event Listener Examples</h1>
+
+    <script>
+        // Example 1: Click Event
+        const clickBox = document.createElement('div');
+        clickBox.className = 'box';
+        clickBox.textContent = 'Click Me';
+        document.body.appendChild(clickBox);
+
+        clickBox.addEventListener('click', () => {
+            alert('Box clicked!');
+        });
+
+        // Example 2: Hover Event
+        const hoverBox = document.createElement('div');
+        hoverBox.className = 'box';
+        hoverBox.textContent = 'Hover Over Me';
+        document.body.appendChild(hoverBox);
+
+        hoverBox.addEventListener('mouseover', () => {
+            hoverBox.style.backgroundColor = 'lightgreen';
+        });
+
+        hoverBox.addEventListener('mouseout', () => {
+            hoverBox.style.backgroundColor = '';
+        });
+
+        // Example 3: Double Click Event
+        const doubleClickBox = document.createElement('div');
+        doubleClickBox.className = 'box';
+        doubleClickBox.textContent = 'Double Click Me';
+        document.body.appendChild(doubleClickBox);
+
+        doubleClickBox.addEventListener('dblclick', () => {
+            doubleClickBox.style.backgroundColor = 'lightcoral';
+        });
+
+        // Example 4: Dynamic List
+        const listContainer = document.createElement('div');
+        listContainer.className = 'box';
+        listContainer.textContent = 'Dynamic List';
+        document.body.appendChild(listContainer);
+
+        const list = document.createElement('ul');
+        listContainer.appendChild(list);
+
+        const addItemButton = document.createElement('button');
+        addItemButton.textContent = 'Add Item';
+        listContainer.appendChild(addItemButton);
+
+        const removeItemButton = document.createElement('button');
+        removeItemButton.textContent = 'Remove Item';
+        listContainer.appendChild(removeItemButton);
+
+        addItemButton.addEventListener('click', () => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Item ${list.children.length + 1}`;
+            list.appendChild(listItem);
+        });
+
+        removeItemButton.addEventListener('click', () => {
+            if (list.lastChild) {
+                list.removeChild(list.lastChild);
+            }
+        });
+
+        // Example 5: Color Picker
+        const colorPickerContainer = document.createElement('div');
+        colorPickerContainer.className = 'box';
+        colorPickerContainer.textContent = 'Pick a Color';
+        document.body.appendChild(colorPickerContainer);
+
+        const colorInput = document.createElement('input');
+        colorInput.type = 'color';
+        colorPickerContainer.appendChild(colorInput);
+
+        const colorBox = document.createElement('div');
+        colorBox.className = 'box';
+        colorBox.textContent = 'Color Box';
+        document.body.appendChild(colorBox);
+
+        colorInput.addEventListener('input', (event) => {
+            colorBox.style.backgroundColor = event.target.value;
+        });
+
+        // Example 6: Size Adjuster
+        const sizeAdjusterContainer = document.createElement('div');
+        sizeAdjusterContainer.className = 'box';
+        sizeAdjusterContainer.textContent = 'Adjust Box Size';
+        document.body.appendChild(sizeAdjusterContainer);
+
+        const sizeSlider = document.createElement('input');
+        sizeSlider.type = 'range';
+        sizeSlider.min = '100';
+        sizeSlider.max = '400';
+        sizeSlider.value = '200';
+        sizeAdjusterContainer.appendChild(sizeSlider);
+
+        const adjustableBox = document.createElement('div');
+        adjustableBox.className = 'box';
+        adjustableBox.textContent = 'Adjustable Box';
+        document.body.appendChild(adjustableBox);
+
+        sizeSlider.addEventListener('input', (event) => {
+            const newSize = `${event.target.value}px`;
+            adjustableBox.style.width = newSize;
+            adjustableBox.style.height = newSize;
+        });
+    </script>
+</body>
+</html>

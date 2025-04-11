@@ -1,0 +1,48 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.responsive-box {
+    background-color: lightblue;
+    color: white;
+    text-align: center;
+    padding: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 80%; /* Default width for larger screens */
+    max-width: 600px; /* Maximum width */
+}
+
+/* Media query for small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .responsive-box {
+        background-color: lightcoral;
+        font-size: 16px;
+        padding: 30px;
+        width: 95%; /* Wider on smaller screens */
+    }
+}
+
+/* Media query for medium screens (min-width: 481px and max-width: 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .responsive-box {
+        background-color: lightseagreen;
+        font-size: 24px;
+        padding: 40px;
+        width: 70%;
+    }
+}
+
+/* Media query for large screens (min-width: 769px) */
+@media (min-width: 769px) {
+    .responsive-box {
+        background-color: lightskyblue;
+        font-size: 28px;
+    }
+}

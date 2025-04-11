@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Sidebar Layout</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 200px 1fr; /* Fixed width sidebar, flexible content */
+            grid-template-rows: auto 1fr auto; /* Header, Content/Sidebar, Footer */
+            grid-template-areas:
+                "header  header"
+                "nav     main"
+                "footer  footer";
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        header { grid-area: header; background-color: #eee; padding: 20px; text-align: center; }
+        nav { grid-area: nav; background-color: #ddd; padding: 15px; }
+        main { grid-area: main; background-color: #ccc; padding: 20px; }
+        footer { grid-area: footer; background-color: #aaa; padding: 10px; text-align: center; }
+
+        /* Style the nav to be a column */
+        nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #bbb;
+        }
+
+        nav a:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <nav>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </nav>
+    <main>Main Content</main>
+    <footer>Footer</footer>
+</body>
+<!-- grid-template-columns: 200px 1fr; creates two columns: a fixed-width sidebar (200px) and a flexible main content area (1fr).
+The grid-template-areas places the nav element in the sidebar column and the main element in the content column.
+We've also added some basic Flexbox styling to the nav element to arrange the links vertically. This demonstrates how you can combine Grid for the overall structure and Flexbox for internal component layouts. -->
+</html>

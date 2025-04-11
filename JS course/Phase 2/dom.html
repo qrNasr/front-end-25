@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        /* Some basic styles for visual feedback */
+        body { font-family: sans-serif; padding: 20px; }
+        .highlight { background-color: yellow; border: 1px solid orange; padding: 2px; }
+        .box { border: 1px solid #ccc; padding: 15px; margin-top: 15px; }
+        .important { color: red; font-weight: bold; }
+        button { margin: 10px 5px 0 0; padding: 8px 12px; cursor: pointer; }
+        .new-item { list-style: square; }
+    </style>
+</head>
+<body>
+
+    <h1 id="main-heading">Welcome to DOM Manipulation!</h1>
+
+    <p class="content">This is a standard paragraph.</p>
+    <p class="content special">This paragraph has an extra 'special' class.</p>
+
+    <div id="container" class="box">
+        <h2>Container Box</h2>
+        <p>Some initial content inside the container.</p>
+    </div>
+
+    <ul id="item-list">
+        <li>List Item 1</li>
+        <li class="removable">List Item 2 (to be removed)</li>
+        <li>List Item 3</li>
+    </ul>
+
+    <div>
+        <button id="change-style-btn">Change Heading Style</button>
+        <button id="change-content-btn">Change Paragraph Content</button>
+        <button id="add-item-btn">Add List Item</button>
+        <button id="remove-item-btn">Remove List Item 2</button>
+        <button id="toggle-class-btn">Toggle Highlight on Container</button>
+    </div>
+
+    <!-- IMPORTANT: Link the JavaScript file at the end of the body -->
+    <!-- Or use the 'defer' attribute in the <head> -->
+    <script src="Dom.js"></script>
+</body>
+</html>

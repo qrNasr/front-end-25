@@ -1,0 +1,87 @@
+<!-- Okay, let's add more diverse and practical DOM manipulation examples! We'll build upon the previous HTML and add new sections and corresponding JavaScript logic.
+
+1. Updated HTML Structure (index.html)
+
+Add these new sections to the end of the <body>, before the <script src="script.js"></script> tag in your index.html file: -->
+
+<!-- ... (Keep all previous sections) ... -->
+
+    <div id="mouse-events-container" class="container">
+        <h2>Mouse Events</h2>
+        <div id="hover-box" style="width: 200px; height: 100px; background-color: lightcoral; border: 1px solid black; text-align: center; line-height: 100px;">
+            Hover over me!
+        </div>
+        <div id="mouse-output"></div>
+    </div>
+
+    <div id="keyboard-events-container" class="container">
+        <h2>Keyboard Events</h2>
+        <label for="key-input">Type here:</label>
+        <input type="text" id="key-input" placeholder="Press keys in this field">
+        <div id="key-output"></div>
+    </div>
+
+    <div id="clone-replace-container" class="container">
+        <h2>Cloning & Replacing Nodes</h2>
+        <div id="clone-source" style="border: 1px dashed green; padding: 10px; margin-bottom: 10px;">
+            <p>This is the <strong>original</strong> element to clone.</p>
+            <button>A button inside</button>
+        </div>
+        <div id="clone-target" style="border: 1px solid blue; padding: 10px; min-height: 50px;">
+            Clones will appear here...
+        </div>
+        <button id="btn-clone-node">Clone the Element</button>
+
+        <p id="replace-me" style="margin-top: 15px; color: orange;">Replace me with something new!</p>
+        <button id="btn-replace-node">Replace Paragraph</button>
+    </div>
+
+    <div id="css-vars-container" class="container">
+        <h2>CSS Variables (Custom Properties)</h2>
+        <div id="css-var-box" style="--box-bg-color: lightblue; --box-padding: 15px; background-color: var(--box-bg-color); padding: var(--box-padding);">
+            This box uses CSS Variables.
+        </div>
+        <button id="btn-change-css-var">Change Box Color (via JS)</button>
+        <button id="btn-read-css-var">Read Box Padding</button>
+        <div id="css-var-output"></div>
+    </div>
+
+     <div id="dimensions-container" class="container">
+        <h2>Element Dimensions & Position</h2>
+        <div id="measurement-box" style="width: 250px; height: 80px; padding: 10px; border: 2px solid purple; background-color: lavender; margin: 10px;">
+            Measure Me!
+        </div>
+        <button id="btn-get-dimensions">Get Dimensions</button>
+        <div id="dimensions-output"></div>
+    </div>
+
+     <div id="window-events-container" class="container">
+        <h2>Window Events</h2>
+        <p>Resize or scroll the window.</p>
+        <div id="window-output">Window Size: ? x ? | Scroll Position: X= ?, Y= ?</div>
+    </div>
+
+    <div id="template-container" class="container">
+        <h2>HTML Template Tag</h2>
+        <template id="item-template">
+            <li class="template-item">
+                <strong>Item Name:</strong> <span class="item-name">Default Name</span><br>
+                <em>Description:</em> <span class="item-desc">Default Desc</span>
+                <button class="btn-delete-template-item">Delete</button>
+            </li>
+        </template>
+        <ul id="template-list"></ul>
+        <button id="btn-add-from-template">Add Item from Template</button>
+    </div>
+
+    <!-- Keep the script tag at the very end -->
+    <script src="D1.js"></script>
+</body>
+
+
+2. Additional JavaScript Code (script.js)
+
+Add this new JavaScript code to the end of your existing script.js file:
+
+// ... (Keep all previous JavaScript code) ...
+

@@ -1,0 +1,29 @@
+        // Example 4: Change Style Dynamically
+        const example4 = document.createElement('div');
+        example4.id = 'example4';
+        example4.className = 'box';
+        example4.textContent = 'Example 4: Change Style Dynamically';
+        document.body.appendChild(example4);
+
+        example4.addEventListener('mouseover', () => {
+            example4.style.backgroundColor = 'lightblue';
+        });
+
+        example4.addEventListener('mouseout', () => {
+            example4.style.backgroundColor = '';
+        });
+
+        // Example 5: Remove an Element
+        const example5 = document.createElement('div');
+        example5.id = 'example5';
+        example5.className = 'box';
+        example5.textContent = 'Example 5: Remove an Element';
+        document.body.appendChild(example5);
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove this box';
+        example5.appendChild(removeButton);
+
+        removeButton.addEventListener('click', () => {
+            example5.remove();
+        });

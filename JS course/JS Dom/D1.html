@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive DOM Examples</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+        .container { border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; background-color: #f9f9f9; }
+        .highlight { background-color: yellow; border: 1px solid orange; }
+        .text-blue { color: blue; }
+        .large-text { font-size: 1.2em; }
+        .hidden { display: none; }
+        #main-image { max-width: 200px; height: auto; display: block; margin-bottom: 10px; }
+        button { margin: 5px; padding: 8px 15px; cursor: pointer; border: 1px solid #999; background-color: #eee; }
+        button:hover { background-color: #ddd; }
+        ul, ol { padding-left: 20px; }
+        li { margin-bottom: 5px; }
+        label { margin-right: 10px; }
+        input[type="text"], textarea { padding: 5px; margin-bottom: 10px; width: 250px; }
+        textarea { height: 60px; }
+        form { border: 1px dashed blue; padding: 10px; margin-top: 15px; }
+        .error { color: red; font-weight: bold; border: 1px solid red; padding: 5px; margin-top: 5px; }
+        .success { color: green; font-weight: bold; border: 1px solid green; padding: 5px; margin-top: 5px; }
+    </style>
+</head>
+<body>
+
+    <div id="header" class="container">
+        <h1 id="main-heading">DOM Manipulation Playground</h1>
+        <p class="subtitle">Exploring various ways to interact with the DOM.</p>
+        <button id="btn-change-heading">Change Heading Text</button>
+        <button id="btn-toggle-subtitle">Toggle Subtitle</button>
+    </div>
+
+    <div id="content-area" class="container">
+        <h2>Content Section</h2>
+        <p>This is the first paragraph of content. It has <span id="dynamic-span">some dynamic text</span>.</p>
+        <p class="extra-info">This paragraph has extra info and can be styled.</p>
+        <button id="btn-style-paragraph">Style Second Paragraph</button>
+        <button id="btn-change-span">Change Span Text</button>
+    </div>
+
+    <div id="list-container" class="container">
+        <h2>Lists</h2>
+        <ul id="item-list">
+            <li>First item</li>
+            <li class="special-item" data-id="item-2">Second item (special)</li>
+            <li>Third item</li>
+        </ul>
+        <button id="btn-add-item">Add New Item</button>
+        <button id="btn-remove-last">Remove Last Item</button>
+        <button id="btn-highlight-special">Highlight Special Item</button>
+        <button id="btn-get-data-id">Get Data ID</button>
+    </div>
+
+    <div id="image-container" class="container">
+        <h2>Image & Attributes</h2>
+        <img id="main-image" src="https://via.placeholder.com/200x100/ccc/808080?text=Image+1" alt="Placeholder Image 1">
+        <a id="main-link" href="https://example.com" target="_blank">Visit Example.com</a>
+        <button id="btn-change-image">Change Image</button>
+        <button id="btn-change-link">Change Link URL</button>
+        <button id="btn-toggle-target">Toggle Link Target</button>
+    </div>
+
+    <div id="form-container" class="container">
+        <h2>Form Interaction</h2>
+        <form id="sample-form">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="DefaultUser">
+            </div>
+            <div>
+                <label>Subscribe:</label>
+                <input type="checkbox" id="subscribe" name="subscribe" checked>
+            </div>
+            <div>
+                <label>Options:</label>
+                <select id="options" name="options">
+                    <option value="opt1">Option 1</option>
+                    <option value="opt2" selected>Option 2</option>
+                    <option value="opt3">Option 3</option>
+                </select>
+            </div>
+            <div>
+                <label>Comments:</label>
+                <textarea id="comments" name="comments"></textarea>
+            </div>
+            <button type="submit">Submit Form</button>
+            <button type="button" id="btn-read-form">Read Form Values</button>
+        </form>
+        <div id="form-output"></div>
+    </div>
+
+     <div id="event-delegation-container" class="container">
+        <h2>Event Delegation</h2>
+        <p>Click on any button below:</p>
+        <button data-action="action1">Action 1</button>
+        <button data-action="action2">Action 2</button>
+        <button data-action="action3">Action 3</button>
+        <div id="delegation-output"></div>
+    </div>
+
+    <!-- Make sure script is loaded last or deferred -->
+    <script src="D1.js"></script>
+</body>
+</html>
+
+
+

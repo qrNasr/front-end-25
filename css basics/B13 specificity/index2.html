@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Another Specificity Scenario</title>
+    <style>
+        /* Rule 1: Element selector */
+        li {
+            font-size: 16px; /* Specificity: 0-0-0-1 */
+            color: black;
+        }
+
+        /* Rule 2: Class selector */
+        .item {
+            color: blue; /* Specificity: 0-0-1-0 */
+        }
+
+        /* Rule 3: Pseudo-class */
+        li:nth-child(even) {
+            background-color: #f0f0f0; /* Specificity: 0-0-1-1 */
+        }
+
+        /* Rule 4: Element selector with a class */
+        li.item {
+            font-weight: bold; /* Specificity: 0-0-1-1 */
+        }
+
+        /* Rule 5: ID selector */
+        #special-item {
+            color: green; /* Specificity: 0-1-0-0 */
+        }
+
+        /* Rule 6: More specific selector with ID and class */
+        ul#list .item {
+            text-decoration: underline; /* Specificity: 0-1-1-1 */
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li class="item">Item 1</li>
+        <li class="item" id="special-item">Item 2 (Special)</li>
+        <li class="item">Item 3</li>
+        <li>Item 4</li>
+    </ul>
+</body>
+
+<!-- Let's break it down item by item:
+
+Item 1: <li class="item">Item 1</li>
+
+    Rule 1 (li): font-size: 16px, color: black (0-0-0-1)
+    Rule 2 (.item): color: blue (0-0-1-0)
+    Rule 4 (li.item): font-weight: bold (0-0-1-1)
+    Rule 6 (ul#list .item): text-decoration: underline (0-1-1-1)
+
+Which styles win for Item 1?
+
+Item 2: <li class="item" id="special-item">Item 2 (Special)</li>
+
+    Rule 1 (li): font-size: 16px, color: black (0-0-0-1)
+    Rule 2 (.item): color: blue (0-0-1-0)
+    Rule 3 (li:nth-child(even)): background-color: #f0f0f0 (0-0-1-1)
+    Rule 4 (li.item): font-weight: bold (0-0-1-1)
+    Rule 5 (#special-item): color: green (0-1-0-0)
+    Rule 6 (ul#list .item): text-decoration: underline (0-1-1-1)
+
+Which styles win for Item 2?
+
+Item 3: <li class="item">Item 3</li>
+
+    Rule 1 (li): font-size: 16px, color: black (0-0-0-1)
+    Rule 2 (.item): color: blue (0-0-1-0)
+    Rule 3 (li:nth-child(odd)): background-color: transparent (inherits from body, or default) (0-0-1-1)
+    Rule 4 (li.item): font-weight: bold (0-0-1-1)
+    Rule 6 (ul#list .item): text-decoration: underline (0-1-1-1)
+
+Which styles win for Item 3?
+
+Item 4: <li>Item 4</li>
+
+    Rule 1 (li): font-size: 16px, color: black (0-0-0-1)
+    Rule 3 (li:nth-child(even)): background-color: #f0f0f0 (0-0-1-1) -->
+</html>

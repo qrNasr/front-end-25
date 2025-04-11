@@ -1,0 +1,128 @@
+ Coding partner
+
+Okay! Let's talk about CSS Pseudo-classes.
+
+Pseudo-classes are keywords added to selectors that specify a special state of the selected element(s). They allow you to style elements based on factors other than their name, attributes, or content—things like their interaction with the user (e.g., when hovered over), their position in the document tree, or their state (e.g., an input field that is checked or disabled).
+
+Pseudo-classes are denoted by a colon (:) followed by the name of the pseudo-class.
+
+Here are some common and useful CSS pseudo-classes:
+
+1. User Interaction Pseudo-classes:
+
+    :hover: Applies styles when the user's mouse pointer hovers over an element.
+    :active: Applies styles when an element is being actively interacted with (e.g., the mouse button is pressed down on a link).
+    :focus: Applies styles when an element has focus (e.g., an input field that has been selected).
+    :visited: Applies styles to links that the user has already visited. (Note: For privacy reasons, the styles you can apply to :visited links are limited in modern browsers.)
+
+Example:
+CSS
+
+a:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+button:active {
+  background-color: darkgray;
+  transform: translateY(2px); /* Slightly move down to indicate press */
+}
+
+input:focus {
+  border: 2px solid blue;
+  outline: none; /* Remove default focus outline */
+}
+
+2. Structural Pseudo-classes:
+
+These pseudo-classes select elements based on their position within the document tree.
+
+    :first-child: Selects the first child element of its parent.
+    :last-child: Selects the last child element of its parent.
+    :nth-child(n): Selects an element that is the nth child of its parent. n can be a number, a keyword (even, odd), or a formula (e.g., 2n+1 for odd elements).   
+
+:nth-last-child(n): Selects an element that is the nth child of its parent, counting from the last child.
+:first-of-type: Selects the first element of its specified type within its parent.
+:last-of-type: Selects the last element of its specified type within its parent.
+:nth-of-type(n): Selects an element that is the nth element of its specified type within its parent.
+:nth-last-of-type(n): Selects an element that is the nth element of its specified type within its parent, counting from the last.
+:only-child: Selects an element that is the only child of its parent.
+:only-of-type: Selects an element that is the only element of its specified type within its parent.  
+
+Example:
+CSS
+
+ul li:first-child {
+  font-weight: bold;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+ul li:nth-child(even) {
+  background-color: #f0f0f0;
+}
+
+div p:first-of-type {
+  color: green; /* Selects the first <p> inside each <div> */
+}
+
+3. Form-related Pseudo-classes:
+
+These pseudo-classes relate to the state of form elements.
+
+    :checked: Selects checked radio buttons or checkboxes.
+    :disabled: Selects disabled form elements.
+    :enabled: Selects enabled form elements.
+    :required: Selects form elements with the required attribute.
+    :optional: Selects form elements without the required attribute.
+    :valid: Selects form elements whose value is valid according to their type and constraints.
+    :invalid: Selects form elements whose value is invalid.
+
+Example:
+CSS
+
+input[type="checkbox"]:checked + label {
+  color: blue;
+}
+
+input:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+input:required {
+  border-left: 5px solid red;
+}
+
+input:invalid {
+  border-color: orange;
+}
+
+4. Other Pseudo-classes:
+
+    :root: Selects the root element of the document (usually the <html> element).
+    :empty: Selects elements that have no children at all (neither elements nor text nodes).
+    :lang(language): Selects elements based on their language attribute (e.g., :lang(fr) selects elements with lang="fr").
+
+Example:
+CSS
+
+:root {
+  --main-color: navy; /* Define a CSS variable at the root */
+}
+
+div:empty {
+  border: 1px dashed gray;
+  padding: 10px;
+  text-align: center;
+}
+
+p:lang(es) {
+  font-style: italic; /* Style Spanish paragraphs */
+}
+
+Pseudo-classes are a powerful tool for applying styles based on dynamic states and the structure of your HTML, allowing for more interactive and context-aware styling.
+
+Would you like to try using some of these pseudo-classes in an example, or would you like to 

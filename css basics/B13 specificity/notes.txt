@@ -1,0 +1,130 @@
+Okay, let's look at a more detailed example to further illustrate CSS specificity.
+
+**Scenario:** We have a simple HTML structure with a nested `<div>` and a paragraph inside. We'll apply several conflicting CSS rules to the paragraph and see which one wins based on specificity.
+
+**HTML:**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Specificity Example</title>
+    <style>
+        /* Rule 1: Element selector */
+        p {
+            color: gray; /* Specificity: 0-0-0-1 */
+        }
+
+        /* Rule 2: Class selector */
+        .text {
+            color: blue; /* Specificity: 0-0-1-0 */
+        }
+
+        /* Rule 3: Element selector with a class */
+        p.text {
+            color: red; /* Specificity: 0-0-1-1 */
+        }
+
+        /* Rule 4: Descendant selector with an ID and a class */
+        #container .text {
+            color: green; /* Specificity: 0-1-1-1 */
+        }
+
+        /* Rule 5: Inline style */
+        /* Will be added directly to the HTML */
+
+        /* Rule 6: More specific descendant selector */
+        div div p.text {
+            color: orange; /* Specificity: 0-0-2-2 */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <p class="text" style="color: purple;">This paragraph will have a specific color.</p>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+**Analysis of Specificity:**
+
+Let's break down the specificity of each rule that targets the `<p>` element:
+
+1.  **`p`**:
+    * IDs: 0
+    * Classes/Pseudo-classes/Attributes: 0
+    * Elements/Pseudo-elements: 1 (`p`)
+    * Specificity: **0-0-0-1**
+    * Color: gray
+
+2.  **`.text`**:
+    * IDs: 0
+    * Classes/Pseudo-classes/Attributes: 1 (`.text`)
+    * Elements/Pseudo-elements: 0
+    * Specificity: **0-0-1-0**
+    * Color: blue
+
+3.  **`p.text`**:
+    * IDs: 0
+    * Classes/Pseudo-classes/Attributes: 1 (`.text`)
+    * Elements/Pseudo-elements: 1 (`p`)
+    * Specificity: **0-0-1-1**
+    * Color: red
+
+4.  **`#container .text`**:
+    * IDs: 1 (`#container`)
+    * Classes/Pseudo-classes/Attributes: 1 (`.text`)
+    * Elements/Pseudo-elements: 0
+    * Specificity: **0-1-1-0**
+    * Color: green
+
+5.  **`style="color: purple;"` (Inline Style)**:
+    * Inline: 1
+    * IDs: 0
+    * Classes/Pseudo-classes/Attributes: 0
+    * Elements/Pseudo-elements: 0
+    * Specificity: **1-0-0-0**
+    * Color: purple
+
+6.  **`div div p.text`**:
+    * IDs: 0
+    * Classes/Pseudo-classes/Attributes: 1 (`.text`)
+    * Elements/Pseudo-elements: 3 (`div`, `div`, `p`)
+    * Specificity: **0-0-1-3**
+    * Color: orange
+
+**Which Color Will the Paragraph Be?**
+
+Let's compare the specificity scores:
+
+* `p`: 0-0-0-1
+* `.text`: 0-0-1-0
+* `p.text`: 0-0-1-1
+* `#container .text`: 0-1-1-0
+* Inline style: 1-0-0-0
+* `div div p.text`: 0-0-1-3
+
+Based on the specificity rules:
+
+1.  **Inline styles have the highest precedence.** Therefore, the color `purple` from the `style` attribute will be applied, overriding all other styles from the `<style>` block.
+
+If we were to remove the inline style, the browser would then look at the remaining rules:
+
+2.  The rule with the next highest specificity is `#container .text` (0-1-1-0), so the paragraph would be **green**.
+
+If we removed the `id="container"` from the outer `div`, then `#container .text` would no longer apply. The next highest specificity would be:
+
+3.  `div div p.text` (0-0-1-3), making the paragraph **orange**.
+
+If we simplified the HTML to just `<p class="text">Hello</p>`, then:
+
+4.  `p.text` (0-0-1-1) would take precedence over `.text` (0-0-1-0) and `p` (0-0-0-1), making the paragraph **red**.
+
+This detailed example shows how different types of selectors contribute to the specificity score and how the browser uses this score to resolve conflicting styles. Remember that inline styles are the most specific, followed by IDs, then classes/pseudo-classes/attributes, and finally elements/pseudo-elements.
+
+Does this more detailed example clarify how CSS specificity works? Would you like to try another scenario?

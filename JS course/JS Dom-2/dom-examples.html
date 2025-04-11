@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>DOM Manipulation Examples</h1>
+
+    <div id="example1" class="box">Example 1: Select and Modify Content</div>
+    <div id="example2" class="box">Example 2: Add Event Listener</div>
+    <div id="example3" class="box">Example 3: Create and Append Elements</div>
+
+    <script>
+        // Example 1: Select and Modify Content
+        const example1 = document.getElementById('example1');
+        example1.textContent = 'Content has been modified using JavaScript!';
+
+        // Example 2: Add Event Listener
+        const example2 = document.getElementById('example2');
+        example2.addEventListener('click', () => {
+            example2.classList.toggle('highlight');
+        });
+
+        // Example 3: Create and Append Elements
+        const example3 = document.getElementById('example3');
+        const newElement = document.createElement('p');
+        newElement.textContent = 'This paragraph was dynamically created and appended.';
+        example3.appendChild(newElement);
+    </script>
+</body>
+</html>

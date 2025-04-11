@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asymmetrical Columns Layout</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Two columns, the first is twice as wide as the second */
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "header  header"
+                "main    aside"
+                "footer  footer";
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        header { grid-area: header; background-color: #eee; padding: 20px; text-align: center; }
+        main { grid-area: main; background-color: #ccc; padding: 20px; }
+        aside { grid-area: aside; background-color: #bbb; padding: 15px; }
+        footer { grid-area: footer; background-color: #aaa; padding: 10px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <main>Main Content (wider)</main>
+    <aside>Sidebar</aside>
+    <footer>Footer</footer>
+</body>
+
+<!-- In this case, grid-template-columns: 2fr 1fr; creates two columns where the first column takes up two fractional units of the available space, and the second column takes up one. This results in the first column being twice as wide as the second.
+
+These are just a few examples of different layouts you can create using CSS Grid. The key is to think about the number of rows and columns you need and how the different areas of your content should be placed within that grid. -->
+</html>

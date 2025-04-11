@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three Equal Columns Layout</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Three equal width columns */
+            grid-template-rows: auto 1fr auto; /* Header, Content, Footer */
+            grid-template-areas:
+                "header  header  header"
+                "main    middle  aside"
+                "footer  footer  footer";
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        header { grid-area: header; background-color: #eee; padding: 20px; text-align: center; }
+        main { grid-area: main; background-color: #ccc; padding: 20px; }
+        .middle { grid-area: middle; background-color: #bbb; padding: 20px; }
+        aside { grid-area: aside; background-color: #aaa; padding: 20px; }
+        footer { grid-area: footer; background-color: #999; padding: 10px; text-align: center; }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <main>Main Content</main>
+    <div class="middle">Middle Section</div>
+    <aside>Sidebar/Additional Content</aside>
+    <footer>Footer</footer>
+</body>
+
+<!-- grid-template-columns: 1fr 1fr 1fr; creates three columns, each taking up an equal fraction (1fr) of the available width.
+grid-template-rows: auto 1fr auto; creates three rows: one for the header (sizing to its content), one for the main content area (taking up the remaining vertical space with 1fr), and one for the footer (sizing to its content).
+grid-template-areas clearly maps the elements to these grid areas. -->
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Specificity Example</title>
+    <style>
+        /* Rule 1: Element selector */
+        p {
+            color: gray; /* Specificity: 0-0-0-1 */
+        }
+
+        /* Rule 2: Class selector */
+        .text {
+            color: blue; /* Specificity: 0-0-1-0 */
+        }
+
+        /* Rule 3: Element selector with a class */
+        p.text {
+            color: red; /* Specificity: 0-0-1-1 */
+        }
+
+        /* Rule 4: Descendant selector with an ID and a class */
+        #container .text {
+            color: green; /* Specificity: 0-1-1-1 */
+        }
+
+        /* Rule 5: Inline style */
+        /* Will be added directly to the HTML */
+
+        /* Rule 6: More specific descendant selector */
+        div div p.text {
+            color: orange; /* Specificity: 0-0-2-2 */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <p class="text" style="color: purple;">This paragraph will have a specific color.</p>
+        </div>
+    </div>
+</body>
+</html>

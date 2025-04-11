@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Layout</title>
+    <style>
+        /* The CSS above would go here */
+        body {
+            display: grid;
+            grid-template-columns: auto 250px;
+            grid-template-rows: auto auto 1fr auto;
+            grid-template-areas:
+                "header  header"
+                "nav     nav"
+                "main    aside"
+                "footer  footer";
+            min-height: 100vh;
+            margin: 0; /* Reset default body margin */
+        }
+
+        header {
+            grid-area: header;
+            background-color: #eee;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: #ddd;
+            padding: 15px;
+        }
+
+        main {
+            grid-area: main;
+            background-color: #ccc;
+            padding: 20px;
+        }
+
+        aside {
+            grid-area: aside;
+            background-color: #bbb;
+            padding: 15px;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #aaa;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <main>Main Content</main>
+    <aside>Sidebar</aside>
+    <footer>Footer</footer>
+</body>
+<!-- We use display: grid on the body to make it the grid container.
+grid-template-columns: auto 250px; creates two columns. The first (auto) will size based on the main content, and the second is fixed at 250px for the sidebar. You can adjust this width as needed.
+grid-template-rows: auto auto 1fr auto; creates four rows. auto will size the header, navigation, and footer based on their content. 1fr makes the middle row (containing main and sidebar) take up the remaining available vertical space.
+grid-template-areas visually defines how these rows and columns are used by assigning names to the grid areas.
+Then, we assign each of our main HTML elements to these named grid areas using the grid-area property. -->
+</html>

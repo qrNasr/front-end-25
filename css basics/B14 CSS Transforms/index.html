@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transforms Demo</title>
+    <link rel="stylesheet" href="transform-styles.css">
+</head>
+<body>
+    <div class="transform-box">Hover Over Me!</div>
+</body>
+<!-- When you hover your mouse over the "Hover Over Me!" box, you should see the following transformations occur smoothly (due to the transition property):
+
+    Translate: The box will move 20 pixels to the right (translateX(20px)).
+    Rotate: The box will rotate clockwise by 10 degrees (rotate(10deg)).
+    Scale: The box will become 1.1 times larger in both width and height (scale(1.1)).
+    Background Color Change: The background color will also change to lightcoral.
+
+When you move your mouse away from the box, it will smoothly return to its original state.
+
+Explanation of the CSS:
+
+    We have basic styling for the body to center the box.
+    The .transform-box has initial styles, including a transition property. This property specifies that changes to the transform property should be animated over a duration of 0.3 seconds using an "ease-in-out" timing function.
+    The .transform-box:hover rule defines the styles that will be applied when the mouse cursor is over the box. The transform property here applies multiple transform functions: translateX, rotate, and scale. The order in which these functions are listed can sometimes affect the final visual outcome.
+
+This simple example demonstrates how to use the transform property with different 2D transform functions to manipulate elements on hover. You can experiment with different transform functions and values to create various effects. -->
+</html>

@@ -1,0 +1,120 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    margin: auto;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(to right, #f0f0f0, #e0e0e0);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+    font-size: 16px;
+    text-align: left;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Styling the list */
+.item-list {
+    /* display: inline; */
+/* display: block; */
+    list-style: none;
+    padding: 0;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.item-list li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.item-list li:last-child {
+    border-bottom: none; /* Style the last item */
+}
+
+.item-list li:first-child {
+    background-color: #e0f7fa; /* Style the first item */
+    font-weight: bold;
+}
+
+.item-list li:nth-child(odd) {
+    background-color: #f9f9f9; /* Style odd items */
+}
+
+.item-list li:hover {
+    background-color: #e0e0e0; /* Hover effect */
+    cursor: pointer;
+}
+
+/* Styling the form */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: #007bff; /* Focus effect */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+input[type="text"]:required {
+    border-left: 5px solid red; /* Required indicator */
+}
+
+input[type="checkbox"]:checked + label {
+    color: green; /* Checked checkbox label */
+    font-weight: normal;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Hover effect on button */
+}
+
+button[type="submit"]:active {
+    background-color: #003d80; /* Active effect on button */
+}
